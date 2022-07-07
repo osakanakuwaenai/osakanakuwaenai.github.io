@@ -73,7 +73,7 @@ lime   -> palegreen
 white  -> dimgray
 */
 
-@media (prefers-color-scheme: light) {
+@media (prefers-color-scheme: dark) {
   body {
     background-color: black;
     color: darkgreen;
