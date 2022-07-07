@@ -1,0 +1,142 @@
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: yellow;
+    color: lime;
+    text-align: center;
+  }
+  
+  body:disabled {
+    background-color: white;
+    color: black;
+    text-align: left;
+  }
+  
+  nav {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 55px;
+    background-color: orange;
+    padding-top: 0px;
+    box-sizing: border-box;
+
+  }
+  nav:hover {
+    height: 66px;
+  }
+  
+  nav > ul {
+    display: flex;
+  }
+  nav > ul > li > ul {
+    padding-left: 0;
+    background-color: darkorange;
+  }
+  
+  nav > ul > li {
+    list-style: none;
+  }
+  nav > ul > li > ul > li {
+    list-style: none;
+    margin-top: 0px;
+    margin-bottom: 5px;
+  }
+  
+  nav a {
+    line-height: 50px;
+    display: block;
+    text-decoration: none;
+    color: white;
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+  nav a:hover {
+    color: lime;
+    background-color: white;
+  }
+  
+  nav > ul > li > ul > li {
+    display: none;
+  }
+
+  nav > ul > li:hover > ul > li {
+    display: block;
+  }
+
+}
+
+/*
+orange -> darkgoldenrod
+yellow -> olive
+lime   -> palegreen
+white  -> dimgray
+*/
+
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: black;
+    color: darkgreen;
+    text-align: center;
+  }
+  
+  body:disabled {
+    background-color: dimgray;
+    color: black;
+    text-align: left;
+  }
+  
+  nav {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 55px;
+    background-color: chocolate;
+    padding-top: 0px;
+    box-sizing: border-box;
+
+  }
+  nav:hover {
+    height: 66px;
+  }
+  
+  nav > ul {
+    display: flex;
+  }
+  nav > ul > li > ul {
+    padding-left: 0;
+    background-color: darkorange;
+  }
+  
+  nav > ul > li {
+    list-style: none;
+  }
+  nav > ul > li > ul > li {
+    list-style: none;
+    margin-top: 0px;
+    margin-bottom: 5px;
+  }
+  
+  nav a {
+    line-height: 50px;
+    display: block;
+    text-decoration: none;
+    color: black;
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+  nav a:hover {
+    color: palegreen;
+    background-color: navy;
+  }
+  
+  nav > ul > li > ul > li {
+    display: none;
+  }
+
+  nav > ul > li:hover > ul > li {
+    display: block;
+  }
+
+}
