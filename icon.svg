@@ -1,0 +1,15 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="176.10045" height="60.53638" viewBox="0,0,176.10045,60.53638">
+  <g transform="translate(-224.06847,-167.61506)">
+    <g data-paper-data="{&quot;isPaintingLayer&quot;:true}" fill-rule="nonzero" stroke="none" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" style="mix-blend-mode: normal">
+      <path d="M332,228l0,-24l32,-0v-24l-45,0l-0,-12h80l-8,8h-24l0,8l16,0l8,8v28l-8,8z" fill="#00ff00"/>
+      <path d="M332,228l0,-44h28l0,24l-24,0l0,4l12,0l0,4l-12,0l0,4l24,0l0,8z" fill="#ffc000"/>
+      <path d="M292,204v-28h48l-0,16l-8,0l0,-8l-8,0l0,8l16,0l0,12l-8,-8l0,8z" fill="#c000ff"/>
+      <path d="M268,204v-36h52l0,8l-28,0l0,20l20,0l0,-4l-12,0l0,-8l20,0l0,20z" fill="#0000ff"/>
+      <path d="M224,196v-28h8v4l4,-4l8,0l-12,12l8,8l0,8l-8,-8l0,8z" fill="#00ffff"/>
+      <path d="M232,196l0,-8l8,8v-8l-8,-8h16l8,0l-8,8v16l-8,0z" fill="#0000ff"/>
+      <path d="M232,180l12,-12l40,-0v12l-20,0l-0,24l-16,-0l0,-16l8,-8z" fill="#c000ff"/>
+      <path d="M264,204v-24h12l4,4l-12,0l0,4l8,0l0,-4l4,0l0,8l-8,0l8,8l0,4l-4,-0l-8,-8l0,8z" fill="#00ffff"/>
+      <path d="M340,204v-28h4l0,4l4,-4l16,0l0,20l8,8l-16,0l0,-20l-4,4l-0,16l-4,0l0,-20l-4,4l0,16z" fill="#00f8ff"/>
+    </g>
+  </g>
+</svg>
