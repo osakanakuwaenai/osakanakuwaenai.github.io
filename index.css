@@ -25,7 +25,7 @@
   nav:hover {
     height: 66px;
   }
-  
+
   nav > ul {
     display: flex;
   }
@@ -63,7 +63,6 @@
   nav > ul > li:hover > ul > li {
     display: block;
   }
-
 }
 
 /*
