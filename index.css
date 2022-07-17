@@ -63,6 +63,16 @@
   nav > ul > li:hover > ul > li {
     display: block;
   }
+
+  .warning {
+    color: darkred;
+    background-color: white;
+  }
+  .warning::selection{
+    color: cyan;
+    background-color: black;
+  }
+
 }
 
 /*
@@ -136,6 +146,15 @@ white  -> dimgray
 
   nav > ul > li:hover > ul > li {
     display: block;
+  }
+  
+  .warning {
+    color: red;
+    background-color: black;
+  }
+  .warning::selection{
+    color: purple;
+    background-color: white;
   }
 
 }
