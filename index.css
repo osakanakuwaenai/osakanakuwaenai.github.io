@@ -65,14 +65,22 @@
   }
 
   .warning {
-    color: darkred;
+    color: red;
     background-color: white;
   }
-  .warning::selection{
+  .warning::before {
+    content: url(./reference_mark-1.svg);
+  }
+  .warning::selection {
     color: cyan;
     background-color: black;
   }
 
+  iframe {
+    max-width: 100%;
+    border: none;
+
+  }
 }
 
 /*
@@ -150,7 +158,7 @@ white  -> dimgray
   
   .warning {
     color: red;
-    background-color: black;
+    background-color: dimgray;
   }
   .warning::selection{
     color: purple;
