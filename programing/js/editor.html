@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<head>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosansjapanese.css">
+  <link rel="stylesheet" href="../../index.css">
+  <link rel="icon" href="../../icon.svg">
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js">
+    
+  </script>
+  <title>投稿する - KIJITORAGAMES</title>
+  <noscript><link rel="stylesheet" href="osakanakuwaenai.github.io/osakanakuwaenai.github.io/noscript.css"></noscript>
+</head>
+<body>
+<noscript>
+  <h1><b>バーロー、このページはJavaScriptがないと力が出ない(=動かない)んだZOY★</b></h1>
+  <font size="-2" class="varkaching-garn">え?じゃあもういいって?ｴｯｳｿ本当にお願いしますからJava Scriptを入れてくださいよろしくお願いします</font>
+</noscript>
+<nav>
+  <ul>
+    <li><a href="//osakanakuwaenai.github.io"><nobr>&emsp;HOME&emsp;</nobr></a></li>
+    <li><a href="//osakanakuwaenai.github.io/programing"><nobr>&emsp;プログラミング&emsp;</nobr></a>
+      <ul>
+        <li>
+          <a href="//osakanakuwaenai.github.io/programing/js">Java Script</a>
+        </li>
+        <li>
+          <a href="//osakanakuwaenai.github.io/programing/scratch">Scratch</a>
+        </li>
+      </ul>
+    </li>
+    <li><a href="//osakanakuwaenai.github.io/minecraft"><nobr>&emsp;&emsp;マイクラ&emsp;&emsp;</nobr></a>
+      <ul>
+        <li>
+          <a href="//osakanakuwaenai.github.io/minecraft/building">建築</a>
+        </li>
+        <li>
+          <a href="//osakanakuwaenai.github.io/minecraft/redstone">赤石</a>
+        </li>
+        <li>
+          <a href="//osakanakuwaenai.github.io/minecraft/rtm">RealTrainMod</a>
+        </li>
+      <li>
+          <a href="//osakanakuwaenai.github.io/minecraft/others">その他のMOD</a>
+        </li>
+      </ul>
+    <li><a href="//osakanakuwaenai.github.io/music"><nobr>&emsp;&emsp;&emsp;作曲&emsp;&emsp;&emsp;</nobr></a>
+      <ul>
+        <li>
+          <a href="//osakanakuwaenai.github.io/music/undertale">UNDERTALE</a>
+        </li>
+          <li>
+          <a href="//osakanakuwaenai.github.io/music/original">オリジナルBGM</a>
+        </li>
+        <li>
+          <a href="//osakanakuwaenai.github.io/music/others">その他</a>
+        </li>
+      </ul>
+    </li>
+    <li><a href="//osakanakuwaenai.github.io/pictures"><nobr>&emsp;&emsp;&emsp;&emsp;絵&emsp;&emsp;&emsp;</nobr></a>
+      <ul>
+        <li>
+          <a href="//osakanakuwaenai.github.io/pictures/dots">ドット絵</a>
+        </li>
+        <li>
+          <a href="//osakanakuwaenai.github.io/pictures/others">その他の絵</a>
+        </li>
+      </ul>
+    </li>
+    <li><a href="https://forms.gle/VAdJjueZNdRPJi9aA"><nobr>&emsp;&emsp;制作依頼&emsp;&emsp;</nobr></a></li>
+  </ul>
+</nav>
+<div class="yes-script-text">
+  <style>
+    #editor_all {
+      display: flex;
+    }
+    #editor_main {
+      width: 60%;
+      border: solid 2px;
+      overflow: hidden;
+      text-align: left;
+      display: block;
+    }
+    #editor_main input#title {
+      width: 100%;
+      font-size: 200%;
+      border-color: green;
+      border-style: solid;
+      padding: 7px;
+    }
+    button, #buttons {
+      background-color: aqua;
+      border-color: green;
+      border-style: solid;
+      border-width: 1px;
+      margin: none;
+      transition: all 300ms;
+    }
+    button:hover {
+      background-color: blue;
+    }
+    textarea {
+      border-color: green;
+      border-style: solid;
+      resize: none;
+      width: 100%;
+      height: 24em;
+      padding: 5px;
+      font-size: medium;
+    }
+    #download-settings {
+      width: 40%;
+      border-color: lime;
+      border-style: solid;
+    }
+    .preview {
+      border-width: 1px;
+      width: 80%;
+      border-color: lime;
+      border-style: solid;
+      font-size: large;
+    }
+  </style>
+  <br><br>
+  <h1>投稿用エディタ</h1>
+  <p>二連の改行は、話題が変わるときに使って下さい。改行が一つになるので、気をつけて下さい。</p>
+    <div id="editor_all">
+      <div id="editor_main">
+        <input id="title" type="text" placeholder="タイトルを入力…"><br>
+        <div id="buttons">
+          <button><b>Ｂ</b></button><button><u><b>Ｕ</b></u></button><button><i><b>Ｉ</b></i></i></button><button><b>＋２</b></button></button><button><b>＋１</b></button></button><button>標準</button></button><button><b>ー１</b></button><button><b>ー２</b></button>
+        </div>
+        <textarea name="main" cols="30" rows="10" id="main"></textarea>
+      </div>
+      <div id="download-settings">
+        <h2>ダウンロードページの編集</h2>
+      </div>
+    </div>
+    <br>
+    <button onclick="MakeView()">ビューを表示</button><button onclick="makeview()">HTMLを出力</button>
+    <div id="preview">
+
+    </div>
+  <script>
+    function MakeView() {
+      let title = document.getElementById("title").value;
+      let inner = document.getElementById("main").value;
+      inner = inner.replace(/&/, "&amp;");
+      inner = inner.replace(/</, "&lt;");
+      inner = inner.replace(/>/, "&gt;");
+      inner = inner.replace(/"/, "&quot;");
+      inner = inner.replace(/'/, "&apos;");
+      inner = inner.replace(/\+/, "&plus;");
+      inner = inner.replace(/-/, "&minus;");
+      inner = inner.replace(/=/, "&equals;");
+      inner = inner.replace(/ /g, "&nbsp;");
+      inner = inner.replace(/　/g, "&emsp;");
+      inner = inner.replace(/\n\n/g, "\n</p>\n<p>\n");
+      inner = inner.replace(/\n/g, "<br>\n");
+      inner = "<p>\n" + inner + "</p>\n";
+      inner = "<h1>" + title + "</h1>\n" + inner;
+      document.getElementById("preview").innerHTML = inner;
+    }
+  </script>
+</div>
+</body>
