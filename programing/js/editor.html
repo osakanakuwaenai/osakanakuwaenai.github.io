@@ -4,7 +4,7 @@
   <link rel="stylesheet" href="../../index.css">
   <link rel="icon" href="../../icon.svg">
   <script src="https://code.jquery.com/jquery-3.5.1.min.js">
-    
+
   </script>
   <title>投稿する - KIJITORAGAMES</title>
   <noscript><link rel="stylesheet" href="osakanakuwaenai.github.io/osakanakuwaenai.github.io/noscript.css"></noscript>
@@ -122,12 +122,11 @@
   </style>
   <br><br>
   <h1>投稿用エディタ</h1>
-  <p>二連の改行は、話題が変わるときに使って下さい。改行が一つになるので、気をつけて下さい。</p>
     <div id="editor_all">
       <div id="editor_main">
         <input id="title" type="text" placeholder="タイトルを入力…"><br>
         <div id="buttons">
-          <button><b>Ｂ</b></button><button><u><b>Ｕ</b></u></button><button><i><b>Ｉ</b></i></i></button><button><b>＋２</b></button></button><button><b>＋１</b></button></button><button>標準</button></button><button><b>ー１</b></button><button><b>ー２</b></button>
+          <button onclick="Bolder()"><b>Ｂ</b></button><button onclick="Under()"><u><b>Ｕ</b></u></button><button onclick="Italic()"><i><b>Ｉ</b></i></i></button><button onclick=""><b>＋２</b></button></button><button><b>＋１</b></button></button><button>標準</button></button><button><b>ー１</b></button><button><b>ー２</b></button>
         </div>
         <textarea name="main" cols="30" rows="10" id="main"></textarea>
       </div>
@@ -141,6 +140,14 @@
 
     </div>
   <script>
+    function Bolder () {
+      let bolder_start = element.selectionStart;
+      let bolder_end = element.selectionEnd;
+      let befores = document.getElementById("main").value.slice(0,bolder_start);
+      let middles = document.getElementById("main").value.slice(bolder_start,bolder_end);
+      let afters  = document.getElementById("main").value.slice(bolder_end);
+      document.getElementById("main")
+    }
     function MakeView() {
       let title = document.getElementById("title").value;
       let inner = document.getElementById("main").value;
