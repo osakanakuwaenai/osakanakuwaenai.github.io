@@ -1,52 +1,57 @@
+body {
+  padding:        2rem;
+  text-align:     center;
+}
+
 nav {
-  position: fixed;
-  top: -1rem;
-  left: 0px;
-  width: 100%;
-  height: 2.5rem;
-  padding-top: 0px;
   box-sizing: border-box;
+  height:         2.5rem;
+  left:           0px;
+  padding-top:    0px;
+  position:       fixed;
+  top:            -1rem;
+  width:          100%;
 }
 nav:hover {
-  height: 3.75rem;
+  height:         3.75rem;
 }
 nav > ul {
-  display: flex;
+  display:        flex;
 }
 nav > ul > li {
-  list-style: none;
+  list-style:     none;
 }
 nav > ul > li > ul {
-  padding-left: 0;
+  padding-left:   0;
 }
 nav > ul > li > ul > li {
-  display: none;
-  list-style: none;
-  margin-top: 0px;
-  margin-bottom: 5px;
+  display:        none;
+  list-style:     none;
+  margin-top:     0px;
+  margin-bottom:  5px;
 }
 nav > ul > li:hover > ul > li {
-  display: block;
+  display:        block;
 }
 nav a {
+  display:        block;
+  margin-left:    0px;
+  margin-right:   0px;
   padding-bottom: 0rem;
-  padding-top: 0rem;
-  display: block;
+  padding-top:    0rem;
   text-decoration: none;
-  margin-right: 0px;
-  margin-left: 0px;
 }
 nav:hover a {
   padding-bottom: 0.25rem;
   padding-top:    0.25rem;
-  font-size:1.5rem;
+  font-size:      1.5rem;
 }
 .warning::before {
-  content: url(./reference_mark-1.svg);
+  content:        url(./reference_mark-1.svg);
 }
 iframe {
-  max-width: 100%;
-  border-style: solid;
+  max-width:      100%;
+  border-style:   solid;
 }
 
 
@@ -65,29 +70,22 @@ iframe {
   }
   
   nav a {
-    color: white;
+    color:            white;
   }
   nav a:hover {
-    color: lime;
     background-color: white;
+    color:            lime;
   }
 
   .warning {
-    color: red;
     background-color: white;
+    color:            red;
   }
   .warning::selection {
-    color: cyan;
     background-color: black;
+    color:            cyan;
   }
 }
-
-/*
-orange -> darkgoldenrod
-yellow -> olive
-lime   -> palegreen
-white  -> dimgray
-*/
 
 @media (prefers-color-scheme: dark) {
   body {
@@ -104,19 +102,19 @@ white  -> dimgray
   }
     
   nav a {
-    color: black;
+    color:            black;
   }
   nav a:hover {
-    color: palegreen;
+    color:            palegreen;
     background-color: navy;
   }
   
   .warning {
-    color: red;
+    color:            red;
     background-color: white;
   }
   .warning::selection{
-    color: purple;
+    color:            purple;
     background-color: dimgray;
   }
 }
