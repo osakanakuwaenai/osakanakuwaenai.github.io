@@ -124,11 +124,7 @@
   <h1>投稿用エディタ</h1>
     <div id="editor_all">
       <div id="editor_main">
-        <input id="title" type="text" placeholder="タイトルを入力…"><br>
-        <div id="buttons">
-          <button onclick="Bolder()"><b>Ｂ</b></button><button onclick="Under()"><u><b>Ｕ</b></u></button><button onclick="Italic()"><i><b>Ｉ</b></i></i></button><button onclick=""><b>＋２</b></button></button><button><b>＋１</b></button></button><button>標準</button></button><button><b>ー１</b></button><button><b>ー２</b></button>
-        </div>
-        <textarea name="main" cols="30" rows="10" id="main"></textarea>
+        <div id="editor"></div>
       </div>
       <div id="download-settings">
         <h2>ダウンロードページの編集</h2>
@@ -139,34 +135,23 @@
     <div id="preview">
 
     </div>
-  <script>
-    function Bolder () {
-      let bolder_start = element.selectionStart;
-      let bolder_end = element.selectionEnd;
-      let befores = document.getElementById("main").value.slice(0,bolder_start);
-      let middles = document.getElementById("main").value.slice(bolder_start,bolder_end);
-      let afters  = document.getElementById("main").value.slice(bolder_end);
-      document.getElementById("main")
-    }
-    function MakeView() {
-      let title = document.getElementById("title").value;
-      let inner = document.getElementById("main").value;
-      inner = inner.replace(/&/, "&amp;");
-      inner = inner.replace(/</, "&lt;");
-      inner = inner.replace(/>/, "&gt;");
-      inner = inner.replace(/"/, "&quot;");
-      inner = inner.replace(/'/, "&apos;");
-      inner = inner.replace(/\+/, "&plus;");
-      inner = inner.replace(/-/, "&minus;");
-      inner = inner.replace(/=/, "&equals;");
-      inner = inner.replace(/ /g, "&nbsp;");
-      inner = inner.replace(/　/g, "&emsp;");
-      inner = inner.replace(/\n\n/g, "\n</p>\n<p>\n");
-      inner = inner.replace(/\n/g, "<br>\n");
-      inner = "<p>\n" + inner + "</p>\n";
-      inner = "<h1>" + title + "</h1>\n" + inner;
-      document.getElementById("preview").innerHTML = inner;
-    }
+  <script src="https://cdn.quilljs.com/1.3.7/quill.js"></script><script>
+    const KJTRCLRS = [
+      '#988500', 'chocolate', 'maroon', 'purple', 'navy', 'darkslategray', 'darkgreen',
+      '#BA0', '#DE8500', 'crimson', 'mediumorchid', 'mediumblue', 'cadetblue', 'forestgreen',
+      '#DC0', 'orange', 'red', 'magenta', 'blue', 'cyan', 'lime',
+      'khaki', 'navajowhite', 'pink', 'plum', 'lightskyblue', 'paleturquoise', 'aquamarine',
+      'black', 'dimgray', 'gray', 'silver', 'lightgray', 'gainsboro', 'white'];
+  
+    var quill = new Quill('#editor', {
+      theme: 'snow',
+      modules: {
+        toolbar: [
+          ['bold', 'italic', 'underline', 'strike', 'link'], 
+          [{'color': KJTRCLRS}, {'background': KJTRCLRS}],
+        ],
+      },
+    });
   </script>
 </div>
 </body>
