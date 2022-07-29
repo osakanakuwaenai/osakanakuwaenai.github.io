@@ -2,10 +2,21 @@
 <head>
   <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosansjapanese.css">
   <link rel="stylesheet" href="../../index.css">
+
+  <link rel="stylesheet" type="text/css" href="../../markitup/markitup/skins/markitup/style.css">
+  <link rel="stylesheet" type="text/css" href="../../markitup/markitup/sets/default/style.css">
+
   <link rel="icon" href="../../icon.svg">
+
   <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-  <script src="../../markitup/jquery.markitup.js"></script>
-  <script src="../../markitup/sets/html/set.js"></script>
+  <script type="text/javascript" src="../../markitup/markitup/jquery.markitup.js"></script>
+  <script type="text/javascript" src="../../markitup/markitup/sets/default/set.js"></script>
+
+  <script language="javascript">
+    /*$(document).ready(function()	{
+     $('#html').markItUp(myHtmlSettings);
+    });*/
+  </script>
   <title>投稿する - KIJITORAGAMES</title>
   <noscript><link rel="stylesheet" href="osakanakuwaenai.github.io/osakanakuwaenai.github.io/noscript.css"></noscript>
 </head>
@@ -98,26 +109,10 @@
     button:hover {
       background-color: blue;
     }
-    textarea {
-      border-color: green;
-      border-style: solid;
-      resize: none;
-      width: 100%;
-      height: 24em;
-      padding: 5px;
-      font-size: medium;
-    }
     #download-settings {
       width: 40%;
       border-color: lime;
       border-style: solid;
-    }
-    .preview {
-      border-width: 1px;
-      width: 80%;
-      border-color: lime;
-      border-style: solid;
-      font-size: large;
     }
   </style>
   <br><br>
@@ -125,10 +120,7 @@
     <div id="editor_all">
       <div id="editor_main">
         <input id="title" type="text" placeholder="タイトルを入力…"><br>
-        <div id="buttons">
-          <button onclick="Bolder()"><b>Ｂ</b></button><button onclick="Under()"><u><b>Ｕ</b></u></button><button onclick="Italic()"><i><b>Ｉ</b></i></i></button><button onclick=""><b>＋２</b></button></button><button><b>＋１</b></button></button><button>標準</button></button><button><b>ー１</b></button><button><b>ー２</b></button>
-        </div>
-        <textarea name="main" cols="30" rows="10" id="main"></textarea>
+        <textarea id="markItUp" cols="10" rows="10" id="main"></textarea>
       </div>
       <div id="download-settings">
         <h2>ダウンロードページの編集</h2>
@@ -138,35 +130,40 @@
     <button onclick="MakeView()">ビューを表示</button><button onclick="makeview()">HTMLを出力</button>
     <div id="preview">
 
-    </div>
-  <script>
-    function Bolder () {
-      let bolder_start = element.selectionStart;
-      let bolder_end = element.selectionEnd;
-      let befores = document.getElementById("main").value.slice(0,bolder_start);
-      let middles = document.getElementById("main").value.slice(bolder_start,bolder_end);
-      let afters  = document.getElementById("main").value.slice(bolder_end);
-      document.getElementById("main")
-    }
-    function MakeView() {
-      let title = document.getElementById("title").value;
-      let inner = document.getElementById("main").value;
-      inner = inner.replace(/&/, "&amp;");
-      inner = inner.replace(/</, "&lt;");
-      inner = inner.replace(/>/, "&gt;");
-      inner = inner.replace(/"/, "&quot;");
-      inner = inner.replace(/'/, "&apos;");
-      inner = inner.replace(/\+/, "&plus;");
-      inner = inner.replace(/-/, "&minus;");
-      inner = inner.replace(/=/, "&equals;");
-      inner = inner.replace(/ /g, "&nbsp;");
-      inner = inner.replace(/　/g, "&emsp;");
-      inner = inner.replace(/\n\n/g, "\n</p>\n<p>\n");
-      inner = inner.replace(/\n/g, "<br>\n");
-      inner = "<p>\n" + inner + "</p>\n";
-      inner = "<h1>" + title + "</h1>\n" + inner;
-      document.getElementById("preview").innerHTML = inner;
-    }
-  </script>
+  </div>
+  <script type="text/javascript">
+    $(function() {
+      // Add markItUp! to your textarea in one line
+      // $('textarea').markItUp( { Settings }, { OptionalExtraSettings } );
+      $('#markItUp').markItUp(mySettings);
+    
+    
+    
+      // You can add content from anywhere in your page
+      // $.markItUp( { Settings } );	
+      $('.add').click(function() {
+         $('#markItUp').markItUp('insert',
+          { 	openWith:'<opening tag>',
+            closeWith:'<\/closing tag>',
+            placeHolder:"New content"
+          }
+        );
+         return false;
+      });
+      
+      // And you can add/remove markItUp! whenever you want
+      // $(textarea).markItUpRemove();
+      $('.toggle').click(function() {
+        if ($("#markItUp.markItUpEditor").length === 1) {
+           $("#markItUp").markItUp('remove');
+          $("span", this).text("get markItUp! back");
+        } else {
+          $('#markItUp').markItUp(mySettings);
+          $("span", this).text("remove markItUp!");
+        }
+         return false;
+      });
+    });
+    </script>    
 </div>
 </body>
