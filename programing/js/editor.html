@@ -3,20 +3,10 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosansjapanese.css">
   <link rel="stylesheet" href="../../index.css">
 
-  <link rel="stylesheet" type="text/css" href="../../markitup/markitup/skins/markitup/style.css">
-  <link rel="stylesheet" type="text/css" href="../../markitup/markitup/sets/default/style.css">
+  <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
 
   <link rel="icon" href="../../icon.svg">
 
-  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-  <script type="text/javascript" src="../../markitup/markitup/jquery.markitup.js"></script>
-  <script type="text/javascript" src="../../markitup/markitup/sets/default/set.js"></script>
-
-  <script language="javascript">
-    /*$(document).ready(function()	{
-     $('#html').markItUp(myHtmlSettings);
-    });*/
-  </script>
   <title>投稿する - KIJITORAGAMES</title>
   <noscript><link rel="stylesheet" href="osakanakuwaenai.github.io/osakanakuwaenai.github.io/noscript.css"></noscript>
 </head>
@@ -25,60 +15,9 @@
   <h1><b>バーロー、このページはJavaScriptがないと力が出ない(=動かない)んだZOY★</b></h1>
   <font size="-2" class="varkaching-garn">え?じゃあもういいって?ｴｯｳｿ本当にお願いしますからJava Scriptを入れてくださいよろしくお願いします</font>
 </noscript>
-<nav>
-  <ul>
-    <li><a href="//osakanakuwaenai.github.io"><nobr>&emsp;HOME&emsp;</nobr></a></li>
-    <li><a href="//osakanakuwaenai.github.io/programing"><nobr>&emsp;プログラミング&emsp;</nobr></a>
-      <ul>
-        <li>
-          <a href="//osakanakuwaenai.github.io/programing/js">Java Script</a>
-        </li>
-        <li>
-          <a href="//osakanakuwaenai.github.io/programing/scratch">Scratch</a>
-        </li>
-      </ul>
-    </li>
-    <li><a href="//osakanakuwaenai.github.io/minecraft"><nobr>&emsp;&emsp;マイクラ&emsp;&emsp;</nobr></a>
-      <ul>
-        <li>
-          <a href="//osakanakuwaenai.github.io/minecraft/building">建築</a>
-        </li>
-        <li>
-          <a href="//osakanakuwaenai.github.io/minecraft/redstone">赤石</a>
-        </li>
-        <li>
-          <a href="//osakanakuwaenai.github.io/minecraft/rtm">RealTrainMod</a>
-        </li>
-      <li>
-          <a href="//osakanakuwaenai.github.io/minecraft/others">その他のMOD</a>
-        </li>
-      </ul>
-    <li><a href="//osakanakuwaenai.github.io/music"><nobr>&emsp;&emsp;&emsp;作曲&emsp;&emsp;&emsp;</nobr></a>
-      <ul>
-        <li>
-          <a href="//osakanakuwaenai.github.io/music/undertale">UNDERTALE</a>
-        </li>
-          <li>
-          <a href="//osakanakuwaenai.github.io/music/original">オリジナルBGM</a>
-        </li>
-        <li>
-          <a href="//osakanakuwaenai.github.io/music/others">その他</a>
-        </li>
-      </ul>
-    </li>
-    <li><a href="//osakanakuwaenai.github.io/pictures"><nobr>&emsp;&emsp;&emsp;&emsp;絵&emsp;&emsp;&emsp;</nobr></a>
-      <ul>
-        <li>
-          <a href="//osakanakuwaenai.github.io/pictures/dots">ドット絵</a>
-        </li>
-        <li>
-          <a href="//osakanakuwaenai.github.io/pictures/others">その他の絵</a>
-        </li>
-      </ul>
-    </li>
-    <li><a href="https://forms.gle/VAdJjueZNdRPJi9aA"><nobr>&emsp;&emsp;制作依頼&emsp;&emsp;</nobr></a></li>
-  </ul>
-</nav>
+<header>
+
+</header>
 <div class="yes-script-text">
   <style>
     #editor_all {
@@ -98,72 +37,54 @@
       border-style: solid;
       padding: 7px;
     }
-    button, #buttons {
-      background-color: aqua;
-      border-color: green;
-      border-style: solid;
-      border-width: 1px;
-      margin: none;
-      transition: all 300ms;
-    }
-    button:hover {
-      background-color: blue;
-    }
     #download-settings {
       width: 40%;
       border-color: lime;
       border-style: solid;
     }
+    #editor {
+      height:20rem;
+    }
   </style>
-  <br><br>
+
   <h1>投稿用エディタ</h1>
     <div id="editor_all">
       <div id="editor_main">
         <input id="title" type="text" placeholder="タイトルを入力…"><br>
-        <textarea id="markItUp" cols="10" rows="10" id="main"></textarea>
+        <div id="editor">
+          どうもみなさんこんにちは！&lt;username&gt;です！<br>
+          &lt;name&gt;って&lt;howiswork&gt;ですよね、<br>
+          &lt;howiswork&gt;ですよね、<br>
+          &lt;howiswork&gt;ですよね！！！()
+        </div>
       </div>
       <div id="download-settings">
         <h2>ダウンロードページの編集</h2>
       </div>
     </div>
     <br>
-    <button onclick="MakeView()">ビューを表示</button><button onclick="makeview()">HTMLを出力</button>
+    <button class="lefter" onclick="MakeView()">ビューを表示</button><button class="righter" onclick="makeview()">HTML を出力</button>
     <div id="preview">
 
   </div>
-  <script type="text/javascript">
-    $(function() {
-      // Add markItUp! to your textarea in one line
-      // $('textarea').markItUp( { Settings }, { OptionalExtraSettings } );
-      $('#markItUp').markItUp(mySettings);
-    
-    
-    
-      // You can add content from anywhere in your page
-      // $.markItUp( { Settings } );	
-      $('.add').click(function() {
-         $('#markItUp').markItUp('insert',
-          { 	openWith:'<opening tag>',
-            closeWith:'<\/closing tag>',
-            placeHolder:"New content"
-          }
-        );
-         return false;
-      });
-      
-      // And you can add/remove markItUp! whenever you want
-      // $(textarea).markItUpRemove();
-      $('.toggle').click(function() {
-        if ($("#markItUp.markItUpEditor").length === 1) {
-           $("#markItUp").markItUp('remove');
-          $("span", this).text("get markItUp! back");
-        } else {
-          $('#markItUp').markItUp(mySettings);
-          $("span", this).text("remove markItUp!");
-        }
-         return false;
-      });
+  <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+  <script src="https://cdn.quilljs.com/1.3.7/quill.js"></script><script>
+    const KJTRCLRS = [
+      '#988500', 'chocolate', 'maroon', 'purple', 'navy', 'darkslategray', 'darkgreen',
+      '#BA0', '#DE8500', 'crimson', 'mediumorchid', 'mediumblue', 'cadetblue', 'forestgreen',
+      '#DC0', 'orange', 'red', 'magenta', 'blue', 'cyan', 'lime',
+      'khaki', 'navajowhite', 'pink', 'plum', 'lightskyblue', 'paleturquoise', 'aquamarine',
+      'black', 'dimgray', 'gray', 'silver', 'lightgray', 'gainsboro', 'white'];
+  
+    var quill = new Quill('#editor', {
+      theme: 'snow',
+      modules: {
+        toolbar: [
+          ['bold', 'italic', 'underline', 'strike', 'link'], 
+          [{'color': KJTRCLRS}, {'background': KJTRCLRS}],
+        ],
+      },
     });
-    </script>    
+  </script>
 </div>
 </body>
