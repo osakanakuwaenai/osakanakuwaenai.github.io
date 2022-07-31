@@ -1,73 +1,123 @@
+body {
+  padding:             2rem;
+  text-align:          center;
+}
+
+header {
+  position:            fixed;
+  top:                 -1em;
+  left:                0rem;
+  width:               100%;
+  height:              3rem;
+  padding-top:         0rem;
+  box-sizing:          border-box;
+  transition:          300ms;
+}
+header:hover {
+  height:              4rem;
+}
+
+header>ul {
+  display:             flex;
+}
+
+header>ul>li {
+  list-style: none;
+}
+
+header>ul>li>ul {
+  padding-left:        0;
+}
+
+header>ul>li>ul>li {
+  list-style:          none;
+  margin-top:          0px;
+  margin-bottom:       1rem;
+  display:             none;
+}
+
+header>ul>li:hover>ul>li {
+  display:             block;
+}
+
+header>ul>li>ul>li>a, header:hover>ul>li>a {
+  line-height:         3rem;
+  display:             block;
+  text-decoration:     none;
+  margin-right:        0px;
+  margin-left:         0px;
+  transition:          300ms;
+}
+header>ul>li>a {
+  line-height: 2rem;
+  display:             block;
+  text-decoration:     none;
+  margin-right:        0px;
+  margin-left:         0px;
+  transition:          300ms;
+}
+
+button.lefter {
+  border-radius:       0.75rem 0rem 0rem 0.75rem / 50% 0% 0% 50%;
+  border-style:        solid;
+}
+button.middler {
+  border-radius:       0;
+  border-style:        solid;
+}
+button.righter {
+  border-radius:       0rem 0.75rem 0.75rem 0rem / 0% 50% 50% 0%;
+  border-style:        solid;
+}
+
+button.lefter, button.middler, button.righter {
+  background-color:    blue;
+  border-color:        cyan;
+  color:               yellow;
+  transition:          100ms;
+}
+button.lefter:hover, button.middler:hover, button.righter:hover {
+  background-color:    cyan;
+  border-color:        blue;
+}
+button.lefter:active, button.middler:active, button.righter:active {
+  background-color:    orange;
+  border-color:        orangered;
+  color:               purple;
+}
+
 @media (prefers-color-scheme: light) {
   body {
-    background-color: yellow;
-    color: lime;
-    text-align: center;
+    background-color:  yellow;
+    color:             lime;
   }
   
-  nav {
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 55px;
-    background-color: orange;
-    padding-top: 0px;
-    box-sizing: border-box;
-
-  }
-  nav:hover {
-    height: 66px;
+  header {
+    background-color:  orange;
   }
 
-  nav > ul {
-    display: flex;
-  }
-  nav > ul > li > ul {
-    padding-left: 0;
-    background-color: darkorange;
+  header>ul>li>ul {
+    background-color:  darkorange;
   }
   
-  nav > ul > li {
-    list-style: none;
+  header a {
+    color:             white;
   }
-  nav > ul > li > ul > li {
-    list-style: none;
-    margin-top: 0px;
-    margin-bottom: 5px;
-  }
-  
-  nav a {
-    line-height: 50px;
-    display: block;
-    text-decoration: none;
-    color: white;
-    margin-right: 0px;
-    margin-left: 0px;
-  }
-  nav a:hover {
-    color: lime;
-    background-color: white;
-  }
-  
-  nav > ul > li > ul > li {
-    display: none;
-  }
-
-  nav > ul > li:hover > ul > li {
-    display: block;
+  header a:hover {
+    color:             lime;
+    background-color:  white;
   }
 
   .warning {
-    color: red;
-    background-color: white;
+    color:             red;
+    background-color:  white;
   }
   .warning::before {
     content: url(./reference_mark-1.svg);
   }
   .warning::selection {
-    color: cyan;
-    background-color: black;
+    color:             cyan;
+    background-color:  black;
   }
 
   iframe {
@@ -86,80 +136,42 @@ white  -> dimgray
 
 @media (prefers-color-scheme: dark) {
   body {
-    background-color: black;
-    color: darkgreen;
-    text-align: center;
+    background-color:  black;
+    color:             darkgreen;
   }
   
   body:disabled {
-    background-color: dimgray;
-    color: black;
-    text-align: left;
+    background-color:  dimgray;
+    color:             black;
   }
   
-  nav {
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 55px;
-    background-color: chocolate;
-    padding-top: 0px;
-    box-sizing: border-box;
+  header {
+    background-color:  chocolate;
 
   }
-  nav:hover {
-    height: 66px;
+
+  header>ul>li>ul {
+    background-color:  darkorange;
   }
   
-  nav > ul {
-    display: flex;
+  header a {
+    color:             black;
   }
-  nav > ul > li > ul {
-    padding-left: 0;
-    background-color: darkorange;
-  }
-  
-  nav > ul > li {
-    list-style: none;
-  }
-  nav > ul > li > ul > li {
-    list-style: none;
-    margin-top: 0px;
-    margin-bottom: 5px;
-  }
-  
-  nav a {
-    line-height: 50px;
-    display: block;
-    text-decoration: none;
-    color: black;
-    margin-right: 0px;
-    margin-left: 0px;
-  }
-  nav a:hover {
-    color: palegreen;
-    background-color: navy;
-  }
-  
-  nav > ul > li > ul > li {
-    display: none;
+  header a:hover {
+    color:             palegreen;
+    background-color:  navy;
   }
 
-  nav > ul > li:hover > ul > li {
-    display: block;
-  }
-  
   .warning {
-    color: red;
-    background-color: dimgray;
+    color:             red;
+    background-color:  dimgray;
   }
   .warning::before {
     content: url(./reference_mark-1.svg);
   }
   .warning::selection{
-    color: purple;
-    background-color: white;
+    color:             purple;
+    background-color:  white;
   }
   iframe {
     max-width: 100%;
