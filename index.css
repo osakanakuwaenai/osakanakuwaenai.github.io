@@ -1,7 +1,7 @@
 body {
   padding-top:         1rem;
-  padding-left:        20%;
-  padding-right:       20%;
+  padding-left:        10%;
+  padding-right:       10%;
   text-align:          left;
 }
 h1, h2, h3, h4, h5, h6, header>ul {
@@ -63,33 +63,36 @@ header>ul>li>a {
 }
 
 button.lefter {
-  border-radius:       0.75rem 0rem 0rem 0.75rem / 50% 0% 0% 50%;
-  border-style:        solid;
+  border-radius:       0.75rem 0rem 0rem 0.75rem / 0.75rem 0rem 0rem 0.75rem;
 }
 button.middler {
   border-radius:       0;
-  border-style:        solid;
 }
 button.righter {
-  border-radius:       0rem 0.75rem 0.75rem 0rem / 0% 50% 50% 0%;
-  border-style:        solid;
+  border-radius:       0rem 0.75rem 0.75rem 0rem / 0rem 0.75rem 0.75rem 0rem;
+}
+button.l-r, button.lefter.righter {
+  border-radius: 0.75rem / 0.75rem;
 }
 
-button.lefter, button.middler, button.righter {
+button.lefter, button.middler, button.righter, button.l-r {
+  border-style:        solid;
   background-color:    blue;
   border-color:        cyan;
   color:               yellow;
   transition:          100ms;
 }
-button.lefter:hover, button.middler:hover, button.righter:hover {
+button.lefter:hover, button.middler:hover, button.righter:hover, button.l-r:hover {
   background-color:    cyan;
   border-color:        blue;
 }
-button.lefter:active, button.middler:active, button.righter:active {
+button.lefter:active, button.middler:active, button.righter:active, button.l-r:active {
   background-color:    orange;
   border-color:        orangered;
   color:               purple;
 }
+
+
 
 @media (prefers-color-scheme: light) {
   body {

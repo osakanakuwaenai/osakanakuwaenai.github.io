@@ -31,6 +31,7 @@
         <li><a href="//osakanakuwaenai.github.io/minecraft/rtm">RealTrainMod</a></li>
         <li><a href="//osakanakuwaenai.github.io/minecraft/others">その他のMOD</a></li>
       </ul>
+    </li>
     <li><a href="//osakanakuwaenai.github.io/music"><nobr>&emsp;&emsp;&emsp;作曲&emsp;&emsp;&emsp;</nobr></a>
       <ul>
         <li><a href="//osakanakuwaenai.github.io/music/undertale">UNDERTALE</a></li>
@@ -54,6 +55,7 @@
     }
     #editor_main {
       width: 60%;
+      height: 26rem;
       border: solid 2px;
       overflow: hidden;
       text-align: left;
@@ -66,36 +68,183 @@
       border-style: solid;
       padding: 7px;
     }
+    .table-title {
+      font-size: 150%;
+      border-color: green;
+      border-style: solid;
+      padding-left: 0px;
+      padding-right: 0px;
+      padding-top: 7px;
+      padding-bottom: 7px;
+    }
     #download-settings {
       width: 40%;
+      height: 26rem;
       border-color: lime;
       border-style: solid;
+      display:      block;
+      overflow: scroll;
+    }
+    #download-settings input[type="text"], #download-settings input[type="url"] {
+      width: auto;
+      height: 1.5rem;
+      border-color: green;
+      border-style: solid;
+    }
+    .table {
+      border-collapse: collapse;
+      border-color: chartreuse;
     }
     #editor {
       height:20rem;
     }
+    #download-settings {
+      text-align: center;
+    }
   </style>
 
   <h1>投稿用エディタ</h1>
-    <div id="editor_all">
-      <div id="editor_main">
-        <input id="title" type="text" placeholder="タイトルを入力…"><br>
-        <div id="editor">
-          どうもみなさんこんにちは！&lt;username&gt;です！<br>
-          &lt;name&gt;って&lt;howiswork&gt;ですよね、<br>
-          &lt;howiswork&gt;ですよね、<br>
-          &lt;howiswork&gt;ですよね！！！()
-        </div>
-      </div>
-      <div id="download-settings">
-        <h2>ダウンロードページの編集</h2>
+  <p>荒い作りですが、お許しください。</p>
+  <div id="editor_all">
+    <div id="editor_main">
+      <input id="title" type="text" placeholder="タイトルを入力…"><br>
+      <div id="editor">
+        どうもみなさんこんにちは！&lt;username&gt;です！<br>
+        &lt;name&gt;って&lt;howiswork&gt;ですよね、<br>
+        &lt;howiswork&gt;ですよね、<br>
+        &lt;howiswork&gt;ですよね！！！()
       </div>
     </div>
-    <br>
-    <button class="lefter" onclick="MakeView()">ビューを表示</button><button class="righter" onclick="makeview()">HTML を出力</button>
-    <div id="preview">
-
+    <div id="download-settings">
+      <h2>ダウンロードページの編集</h2>
+      <div id="tables">
+      </div>
+      <button onclick="tableAdder()" class="l-r">＋</button>
+    </div>
   </div>
+  <br>
+  <button class="lefter" onclick="MakeView()">ビューを表示</button><button class="righter" onclick="makeview()">HTML を出力</button>
+  <div id="preview">
+  </div>
+
+  <!-- The script is for create table. -->
+  <script>
+    var tbs = document.getElementById("tables"); //TaBleS
+    var value_num = 0;
+    var strtb =
+    `<input type="title" class="table-title ${value_num}">
+    <table class="table ${value_num}">
+      <tr>
+        <th></th><th><input type="text"></th>
+      </tr>
+      <tr>
+        <th><input type="text"></th><td><input type="url"></td>
+      </tr>
+      <tr>
+        <th><input type="text"></th><td><input type="url"></td>
+      </tr>
+    </table>
+    <input type="radio" name="radio-${value_num}"><input type="number" min="1" class="num-${value_num}">
+    <select class="col-or-row ${value_num}">
+      <option value="">--選択--</option>
+      <option value="col">列</option>
+      <option value="row">行</option>
+    </select>目<br>
+    <input type="radio" name="radio-${value_num}">最後の
+    <select class="col-or-row ${value_num}">
+      <option value="">--選択--</option>
+      <option value="col">列</option>
+      <option value="row">行</option>
+    </select>を<br>
+    <button class="lefter btn ${value_num}" onclick="rowcolAdder(${value_num})">追加する</button><button class="righter btn ${value_num}" onclick="tableDeleter(${value_num})">リストを削除</button><br><br>
+    `;
+    
+    function tableAdder() {
+      tbs.insertAdjacentHTML("beforeend", strtb);
+      value_num++;
+      strtb =
+      `<input type="title" class="table-title ${value_num}">
+      <table class="table ${value_num}">
+        <tr>
+          <th></th><th><input type="text"></th>
+        </tr>
+        <tr>
+          <th><input type="text"></th><td><input type="url"></td>
+        </tr>
+        <tr>
+          <th><input type="text"></th><td><input type="url"></td>
+        </tr>
+      </table>
+      <input type="radio" name="radio-${value_num}"><input type="number" min="1" class="num-${value_num}">
+      <select class="col-or-row ${value_num}">
+        <option value="">--選択--</option>
+        <option value="col">列</option>
+        <option value="row">行</option>
+      </select>目<br>
+      <input type="radio" name="radio-${value_num}">最後の
+      <select class="col-or-row ${value_num}">
+        <option value="">--選択--</option>
+        <option value="col">列</option>
+        <option value="row">行</option>
+      </select>を<br>
+      <button class="lefter btn ${value_num}" onclick="rowcolAdder(${value_num})">追加する</button><button class="righter btn ${value_num}" onclick="tableDeleter(${value_num})">リストを削除</button><br><br>
+      `;
+    };
+
+    function tableDeleter(num) {
+
+    }
+
+    function rowcolAdder(num) {
+      var lines;
+      var isrow;
+      const table = document.getElementsByClassName("table " + num).item(0);
+      const radio = document.getElementsByName("radio-" + num);
+
+      if (radio.item(0).checked) {
+        lines = Number(document.getElementsByClassName("num-" + num).item(0).value);
+        isrow = document.getElementsByClassName("col-or-row " + num).item(0).value == "row";
+      } else if (radio.item(1).checked) {
+        lines = -1;
+        isrow = document.getElementsByClassName("col-or-row " + num).item(1).value == "row";
+      } else {
+        if (confirm("numの値を使って実行しますか？")) {
+          lines = Number(document.getElementsByClassName("num-" + num).item(0).value);
+          isrow = document.getElementsByClassName("col-or-row " + num).item(0).value == "row";
+        };
+      };
+      if (isrow) {
+        let insertedRow = table.insertRow(lines); //Since it is not possible to generate th with insertcell,
+        let th = document.createElement("th"); //Create th,
+        th.innerHTML = "<input type=\"text\">"; //Set innerHtml,
+        insertedRow.appendChild(th); //And, use appendchild
+
+        let j = table.outerHTML.match(/<td>/g).length / (table.outerHTML.match(/<tr>/g).length  -1/*except td which only has th*/  -1/*Except for the td (insertedRow) created earlier*/);
+        for (let i = 0; i < j; i++) {
+          let td = insertedRow.insertCell(-1);
+          td.innerHTML = "<input type=\"url\">";
+        }
+      
+      } else if (!isrow) {
+        let th = document.createElement("th");
+        th.innerHTML = "<input type=\"text\">";
+        table.rows[0].appendChild(th);
+        
+        let len = table.rows.length;
+        for (let i = 1; i < len; i++) { //The reason for setting "i = 1;" is to prevent td from entering where th is added.
+          let td = table.rows[i].insertCell(lines);
+          td.innerHTML = "<input type=\"url\">";
+        }        
+
+      };
+    };
+    
+  </script>
+
+  <script>
+
+  </script>
+
   <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
   <script src="https://cdn.quilljs.com/1.3.7/quill.js"></script><script>
     const KJTRCLRS = [
