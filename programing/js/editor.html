@@ -95,12 +95,13 @@
       border-collapse: collapse;
       border-color: chartreuse;
     }
-    #editor {
+    #editor-main {
       height:20rem;
     }
     #download-settings {
       text-align: center;
     }
+    
   </style>
 
   <h1>投稿用エディタ</h1>
@@ -108,7 +109,26 @@
   <div id="editor_all">
     <div id="editor_main">
       <input id="title" type="text" placeholder="タイトルを入力…"><br>
-      <div id="editor">
+      <div id="editor-toolbar">
+        <span class="ql-formats">
+          <span class="ql-picker">
+            <span class="ql-picker-label" tabindex="0" role="button" aria-expanded="false" aria-controls="ql-picker-options-0">
+              
+            </span>
+          </span>
+        </span>
+        <span class="ql-formats"></span>
+        <span class="ql-formats"></span>
+        <span class="ql-formats"></span>
+        <span class="ql-formats"></span>
+        <span class="ql-formats"></span>
+        <span class="ql-formats"></span>
+        <span class="ql-formats"></span>
+        <span class="ql-formats"></span>
+        <span class="ql-formats"></span>
+        <span class="ql-formats"></span>
+      </div>
+      <div id="editor-main">
         どうもみなさんこんにちは！&lt;username&gt;です！<br>
         &lt;name&gt;って&lt;howiswork&gt;ですよね、<br>
         &lt;howiswork&gt;ですよね、<br>
@@ -123,47 +143,17 @@
     </div>
   </div>
   <br>
-  <button class="lefter" onclick="MakeView()">ビューを表示</button><button class="righter" onclick="makeview()">HTML を出力</button>
+  <button class="lefter" onclick="MakeView()" title="ビューを表示します。">ビューを表示</button><button class="righter" onclick="makeview()" view="htmlを出力します。これをgithubに提出してください。">HTML を出力</button>
   <div id="preview">
   </div>
 
   <!-- The script is for create table. -->
   <script>
-    var tbs = document.getElementById("tables"); //TaBleS
-    var value_num = 0;
-    var strtb =
-    `<input type="title" class="table-title ${value_num}">
-    <table class="table ${value_num}">
-      <tr>
-        <th></th><th><input type="text"></th>
-      </tr>
-      <tr>
-        <th><input type="text"></th><td><input type="url"></td>
-      </tr>
-      <tr>
-        <th><input type="text"></th><td><input type="url"></td>
-      </tr>
-    </table>
-    <input type="radio" name="radio-${value_num}"><input type="number" min="1" class="num-${value_num}">
-    <select class="col-or-row ${value_num}">
-      <option value="">--選択--</option>
-      <option value="col">列</option>
-      <option value="row">行</option>
-    </select>目<br>
-    <input type="radio" name="radio-${value_num}">最後の
-    <select class="col-or-row ${value_num}">
-      <option value="">--選択--</option>
-      <option value="col">列</option>
-      <option value="row">行</option>
-    </select>を<br>
-    <button class="lefter btn ${value_num}" onclick="rowcolAdder(${value_num})">追加する</button><button class="righter btn ${value_num}" onclick="tableDeleter(${value_num})">リストを削除</button><br><br>
-    `;
-    
-    function tableAdder() {
-      tbs.insertAdjacentHTML("beforeend", strtb);
-      value_num++;
-      strtb =
-      `<input type="title" class="table-title ${value_num}">
+    let tbs = document.getElementById("tables"); //TaBleS
+    let value_num = 0;
+    let strtb =
+    `<div class="${value_num}">
+      <input type="title" class="table-title ${value_num}">
       <table class="table ${value_num}">
         <tr>
           <th></th><th><input type="text"></th>
@@ -175,29 +165,103 @@
           <th><input type="text"></th><td><input type="url"></td>
         </tr>
       </table>
-      <input type="radio" name="radio-${value_num}"><input type="number" min="1" class="num-${value_num}">
-      <select class="col-or-row ${value_num}">
-        <option value="">--選択--</option>
-        <option value="col">列</option>
-        <option value="row">行</option>
-      </select>目<br>
-      <input type="radio" name="radio-${value_num}">最後の
-      <select class="col-or-row ${value_num}">
-        <option value="">--選択--</option>
-        <option value="col">列</option>
-        <option value="row">行</option>
-      </select>を<br>
-      <button class="lefter btn ${value_num}" onclick="rowcolAdder(${value_num})">追加する</button><button class="righter btn ${value_num}" onclick="tableDeleter(${value_num})">リストを削除</button><br><br>
-      `;
+
+      <label>
+        <input type="radio" name="radio-${value_num}">
+        <input type="number" min="1" class="num-${value_num}">
+        <select class="col-or-row ${value_num}">
+          <option value="">--選択--</option>
+          <option value="col">列</option>
+          <option value="row">行</option>
+        </select>目<br>
+      </label>
+
+      <label>
+        <input type="radio" name="radio-${value_num}">
+        最後の
+        <select class="col-or-row ${value_num}">
+          <option value="">--選択--</option>
+          <option value="col">列</option>
+          <option value="row">行</option>
+        </select>を
+      </label>
+  
+      <br>
+<button class="lefter btn ${value_num}" onclick="rowcolAdder(${value_num})" title="特定の列・行を追加します。">追加する</button>\
+<button class="middler btn ${value_num}" onclick="rowcolDeleter(${value_num})" title="特定の列・行を削除します。">削除する</button>\
+<button class="righter btn ${value_num}" onclick="tableDeleter(${value_num})" title="注：リストを削除します。">&nbsp;ー&nbsp;</button><br><br>
+    </div>`;
+
+    function tableAdder() {
+      tbs.insertAdjacentHTML("beforeend", strtb);
+      value_num++;
+      strtb =
+        `<div class="${value_num}">
+        <input type="title" class="table-title ${value_num}">
+        <table class="table ${value_num}">
+          <tr>
+            <th></th><th><input type="text"></th>
+          </tr>
+          <tr>
+            <th><input type="text"></th><td><input type="url"></td>
+          </tr>
+          <tr>
+            <th><input type="text"></th><td><input type="url"></td>
+          </tr>
+        </table>
+
+        <label>
+          <input type="radio" name="radio-${value_num}">
+          <input type="number" min="1" class="num-${value_num}">
+          <select class="col-or-row ${value_num}">
+            <option value="">--選択--</option>
+            <option value="col">列</option>
+            <option value="row">行</option>
+          </select>目<br>
+        </label>
+
+        <label>
+          <input type="radio" name="radio-${value_num}">
+          最後の
+          <select class="col-or-row ${value_num}">
+            <option value="">--選択--</option>
+            <option value="col">列</option>
+            <option value="row">行</option>
+          </select>を
+        </label>
+
+        <br>
+<button class="lefter btn ${value_num}" onclick="rowcolAdder(${value_num})" title="特定の列・行を追加します。">追加する</button>\
+<button class="middler btn ${value_num}" onclick="rowcolDeleter(${value_num})" title="特定の列・行を削除します。">削除する</button>\
+<button class="righter btn ${value_num}" onclick="tableDeleter(${value_num})" title="注：リストを削除します。">&nbsp;ー&nbsp;</button><br><br>
+    </div>`;
     };
 
     function tableDeleter(num) {
-
+      let isGetConfirm = true;
+      let deleteDiv = document.getElementsByClassName(num).item(0);
+      if (document.getElementsByClassName(num).item(1).value !== "") {isGetConfirm = false;}
+      else {
+        let dTable = document.getElementsByClassName(num).item(2);
+        
+        labelOf: {
+          for (let dRow of dTable.rows) {
+            for (let dCell of dRow.cells) {
+              let dItem = dCell.children.item(0);
+              if (dItem.value !== null) {isGetConfirm = false;}
+            }
+            if (isGetConfirm === true) {break labelOf;}
+          }
+        }
+      }
+      if (isGetConfirm || confirm("表を削除します。\n本当にいいのですか？")){
+        deleteDiv.remove();
+      }
     }
 
     function rowcolAdder(num) {
-      var lines;
-      var isrow;
+      let lines;
+      let isrow;
       const table = document.getElementsByClassName("table " + num).item(0);
       const radio = document.getElementsByName("radio-" + num);
 
@@ -207,12 +271,10 @@
       } else if (radio.item(1).checked) {
         lines = -1;
         isrow = document.getElementsByClassName("col-or-row " + num).item(1).value == "row";
-      } else {
-        if (confirm("numの値を使って実行しますか？")) {
+      } else if (confirm("numの値を使って実行しますか？")) {
           lines = Number(document.getElementsByClassName("num-" + num).item(0).value);
           isrow = document.getElementsByClassName("col-or-row " + num).item(0).value == "row";
-        };
-      };
+      } else {return;};
       if (isrow) {
         let insertedRow = table.insertRow(lines); //Since it is not possible to generate th with insertcell,
         let th = document.createElement("th"); //Create th,
@@ -235,32 +297,72 @@
           let td = table.rows[i].insertCell(lines);
           td.innerHTML = "<input type=\"url\">";
         }        
-
       };
     };
     
+    function rowcolDeleter(num) {
+      let lines;
+      let isrow;
+      const table = document.getElementsByClassName("table " + num);
+      const radio = document.getElementsByName("radio-" + num);
+      if (radio.item(0).checked) {
+        lines = Number(document.getElementsByClassName("num-" + num).item(0).value);
+        isrow = document.getElementsByClassName("col-or-row " + num).item(0).value == "row";
+      } else if (radio.item(1).checked) {
+        lines = -1;
+        isrow = document.getElementsByClassName("col-or-row " + num).item(1).value == "row";
+      } else if (confirm("numの値を使って実行しますか？")) {
+        lines = Number(document.getElementsByClassName("num-" + num).item(0).value);
+        isrow = document.getElementsByClassName("col-or-row " + num).item(0).value == "row";
+      } else {return;};
+      if (isrow) {
+        table.deleteRow(num);
+      } else {
+        for (let i; i < table.rows.length; i++) {
+          table.rows[i].deleteCell(num);
+        }
+      }
+    }
+
+
   </script>
 
+  <!-- The script is for create biew and HTML. -->
   <script>
 
   </script>
 
-  <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
   <script src="https://cdn.quilljs.com/1.3.7/quill.js"></script><script>
     const KJTRCLRS = [
       '#988500', 'chocolate', 'maroon', 'purple', 'navy', 'darkslategray', 'darkgreen',
       '#BA0', '#DE8500', 'crimson', 'mediumorchid', 'mediumblue', 'cadetblue', 'forestgreen',
       '#DC0', 'orange', 'red', 'magenta', 'blue', 'cyan', 'lime',
       'khaki', 'navajowhite', 'pink', 'plum', 'lightskyblue', 'paleturquoise', 'aquamarine',
-      'black', 'dimgray', 'gray', 'silver', 'lightgray', 'gainsboro', 'white'];
-  
-    var quill = new Quill('#editor', {
+      'black', 'dimgray', 'gray', 'silver', 'lightgray', 'gainsboro', 'white'
+    ];
+
+    const KJTRTOOLBAR = [
+            [{ header: ['2', '3', false] }],
+            ['bold', 'italic', 'underline', 'strike'],
+            [{'list': 'ordered'}, {'list': 'bullet'}],
+            [{'script': 'sub'}, { 'script': 'super'}],
+            ['link', 'image', 'video'], 
+            [{'color': KJTRCLRS}, {'background': KJTRCLRS}],
+            [{'size': ['large', false, 'small'] }]
+            ['formula', 'code-block'],
+            [], ['clean'],
+        ];
+
+    var quill = new Quill('#editor-main', {
       theme: 'snow',
       modules: {
-        toolbar: [
-          ['bold', 'italic', 'underline', 'strike', 'link'], 
-          [{'color': KJTRCLRS}, {'background': KJTRCLRS}],
-        ],
+        toolbar: {
+          container: KJTRTOOLBAR,
+          //container: '#editor-toolbar',
+          handlers: {
+
+          }
+        }
       },
     });
   </script>
