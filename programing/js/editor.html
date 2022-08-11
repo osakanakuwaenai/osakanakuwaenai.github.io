@@ -15,39 +15,7 @@
   <h1><b>バーロー、このページはJavaScriptがないと力が出ない(=動かない)んだZOY★</b></h1>
   <font size="-2" class="varkaching-garn">え?じゃあもういいって?ｴｯｳｿ本当にお願いしますからJava Scriptを入れてくださいよろしくお願いします</font>
 </noscript>
-<header>
-  <ul>
-    <li><a href="//osakanakuwaenai.github.io"><nobr>&emsp;HOME&emsp;</nobr></a></li>
-    <li><a href="//osakanakuwaenai.github.io/programing"><nobr>&emsp;プログラミング&emsp;</nobr></a>
-      <ul>
-        <li><a href="//osakanakuwaenai.github.io/programing/js">Java Script</a></li>
-        <li><a href="//osakanakuwaenai.github.io/programing/scratch">Scratch</a></li>
-      </ul>
-    </li>
-    <li><a href="//osakanakuwaenai.github.io/minecraft"><nobr>&emsp;&emsp;マイクラ&emsp;&emsp;</nobr></a>
-      <ul>
-        <li><a href="//osakanakuwaenai.github.io/minecraft/building">建築</a></li>
-        <li><a href="//osakanakuwaenai.github.io/minecraft/redstone">赤石</a></li>
-        <li><a href="//osakanakuwaenai.github.io/minecraft/rtm">RealTrainMod</a></li>
-        <li><a href="//osakanakuwaenai.github.io/minecraft/others">その他のMOD</a></li>
-      </ul>
-    </li>
-    <li><a href="//osakanakuwaenai.github.io/music"><nobr>&emsp;&emsp;&emsp;作曲&emsp;&emsp;&emsp;</nobr></a>
-      <ul>
-        <li><a href="//osakanakuwaenai.github.io/music/undertale">UNDERTALE</a></li>
-        <li><a href="//osakanakuwaenai.github.io/music/original">オリジナルBGM</a></li>
-        <li><a href="//osakanakuwaenai.github.io/music/others">その他</a></li>
-      </ul>
-    </li>
-    <li><a href="//osakanakuwaenai.github.io/pictures"><nobr>&emsp;&emsp;&emsp;&emsp;絵&emsp;&emsp;&emsp;</nobr></a>
-      <ul>
-        <li><a href="//osakanakuwaenai.github.io/pictures/dots">ドット絵</a></li>
-        <li><a href="//osakanakuwaenai.github.io/pictures/others">その他の絵</a></li>
-      </ul>
-    </li>
-    <li><a href="https://forms.gle/VAdJjueZNdRPJi9aA"><nobr>&emsp;&emsp;制作依頼&emsp;&emsp;</nobr></a></li>
-  </ul>
-</header>
+<script src="../../index.js"></script>
 <div class="yes-script-text">
   <style>
     #editor_all {
@@ -55,48 +23,70 @@
     }
     #editor_main {
       width: 60%;
-      height: 26rem;
+      height: 25rem;
       border: solid 2px;
       overflow: hidden;
       text-align: left;
       display: block;
     }
     #editor_main input#title {
-      width: 100%;
       font-size: 200%;
-      border-color: green;
+      width: 100%;
+      box-sizing: border-box;
       border-style: solid;
-      padding: 7px;
+      border-width: 2px;
+      border-color: lime;
     }
+    #download-settings {
+      width: 40%;
+      height: 25rem;
+      box-sizing: border-box;
+      border: solid 2px;
+      display: block;
+      overflow: scroll;
+    }
+    #download-settings table input {
+      height: 100%;
+      width: 4rem;
+      border: none;
+      margin: 0;
+      background-color: transparent;
+      color: lime;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      #download-settings table input {
+      color: darklime;
+    }
+    }
+
     .table-title {
       font-size: 150%;
-      border-color: green;
+      width: calc(100% - 6px);
+      border-color: lime;
       border-style: solid;
+      border-width: 3px;
+      margin-bottom: 0.5rem;
       padding-left: 0px;
       padding-right: 0px;
       padding-top: 7px;
       padding-bottom: 7px;
     }
-    #download-settings {
-      width: 40%;
-      height: 26rem;
-      border-color: lime;
-      border-style: solid;
-      display:      block;
-      overflow: scroll;
-    }
-    #download-settings input[type="text"], #download-settings input[type="url"] {
-      width: auto;
-      height: 1.5rem;
-      border-color: green;
-      border-style: solid;
-    }
-    .table {
+    table {
       border-collapse: collapse;
-      border-color: chartreuse;
+      box-sizing: content-box;
     }
-    #editor-main {
+    th, td {
+      height: 1.5rem;
+      border-style: solid;
+      border-width: 2px;
+      border-color: lime;
+      padding-left: 0;
+      padding-right: 0;
+    }
+    #quill-ed {
       height:20rem;
+      background-color: white;
     }
     #download-settings {
       text-align: center;
@@ -128,11 +118,11 @@
         <span class="ql-formats"></span>
         <span class="ql-formats"></span>
       </div>
-      <div id="editor-main">
-        どうもみなさんこんにちは！&lt;username&gt;です！<br>
-        &lt;name&gt;って&lt;howiswork&gt;ですよね、<br>
-        &lt;howiswork&gt;ですよね、<br>
-        &lt;howiswork&gt;ですよね！！！()
+      <div id="quill-ed">
+        どうもみなさんこんにちは！&lt;user-name&gt;です！<br>
+        &lt;works-name&gt;って&lt;how-is-work&gt;ですよね、<br>
+        &lt;how-is-work&gt;ですよね、<br>
+        &lt;how-is-work&gt;ですよね！！！(&lt;tsukkomi&gt;)
       </div>
     </div>
     <div id="download-settings">
@@ -143,7 +133,7 @@
     </div>
   </div>
   <br>
-  <button class="lefter" onclick="MakeView()" title="ビューを表示します。">ビューを表示</button><button class="righter" onclick="makeview()" view="htmlを出力します。これをgithubに提出してください。">HTML を出力</button>
+  <div class="center"><button class="l-r" onclick="makeview()" view="htmlを出力します。これをgithubに提出してください。">HTML を出力</button></div>
   <div id="preview">
   </div>
 
@@ -153,7 +143,7 @@
     let value_num = 0;
     let strtb =
     `<div class="${value_num}">
-      <input type="title" class="table-title ${value_num}">
+      <input type="text" class="table-title \$\{value_num\}" placeholder="バージョン名を入力..."><br>
       <table class="table ${value_num}">
         <tr>
           <th></th><th><input type="text"></th>
@@ -197,7 +187,7 @@
       value_num++;
       strtb =
         `<div class="${value_num}">
-        <input type="title" class="table-title ${value_num}">
+        <input type="text" class="table-title \$\{value_num\}" placeholder="バージョン名を入力..."><br>
         <table class="table ${value_num}">
           <tr>
             <th></th><th><input type="text"></th>
@@ -327,15 +317,15 @@
 
   </script>
 
-  <!-- The script is for create biew and HTML. -->
+  <!-- The script is for create HTML. -->
   <script>
 
   </script>
 
   <script src="https://cdn.quilljs.com/1.3.7/quill.js"></script><script>
     const KJTRCLRS = [
-      '#988500', 'chocolate', 'maroon', 'purple', 'navy', 'darkslategray', 'darkgreen',
-      '#BA0', '#DE8500', 'crimson', 'mediumorchid', 'mediumblue', 'cadetblue', 'forestgreen',
+      '#988500', 'chocolate', 'maroon', 'purple', 'navy', 'darkslategray', 'darklime',
+      '#BA0', '#DE8500', 'crimson', 'mediumorchid', 'mediumblue', 'cadetblue', 'forestlime',
       '#DC0', 'orange', 'red', 'magenta', 'blue', 'cyan', 'lime',
       'khaki', 'navajowhite', 'pink', 'plum', 'lightskyblue', 'paleturquoise', 'aquamarine',
       'black', 'dimgray', 'gray', 'silver', 'lightgray', 'gainsboro', 'white'
@@ -345,15 +335,15 @@
             [{ header: ['2', '3', false] }],
             ['bold', 'italic', 'underline', 'strike'],
             [{'list': 'ordered'}, {'list': 'bullet'}],
-            [{'script': 'sub'}, { 'script': 'super'}],
-            ['link', 'image', 'video'], 
             [{'color': KJTRCLRS}, {'background': KJTRCLRS}],
+            ['link', 'image', 'video'], 
+            [{'script': 'sub'}, { 'script': 'super'}],
             [{'size': ['large', false, 'small'] }]
             ['formula', 'code-block'],
             [], ['clean'],
         ];
 
-    var quill = new Quill('#editor-main', {
+    var quill = new Quill('#quill-ed', {
       theme: 'snow',
       modules: {
         toolbar: {

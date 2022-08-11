@@ -1,14 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap');
+
 body {
+  font-family: 'Kosugi Maru', cursive;
+  font-size:           1rem;
   padding-top:         1rem;
-  padding-left:        10%;
-  padding-right:       10%;
+  padding-left:        30%;
+  padding-right:       30%;
   text-align:          left;
 }
-h1, h2, h3, h4, h5, h6, header>ul {
+
+h1, h2, h3, h4, h5, h6, header>nav>ul, .center {
   text-align:          center;
 }
 
-header {
+header>nav {
   position:            fixed;
   top:                 -1em;
   left:                0rem;
@@ -18,48 +23,57 @@ header {
   box-sizing:          border-box;
   transition:          300ms;
 }
-header:hover {
+header>nav:hover {
   height:              4rem;
 }
 
-header>ul {
+header>nav>ul {
   display:             flex;
 }
 
-header>ul>li {
+header>nav>ul>li {
   list-style: none;
 }
 
-header>ul>li>ul {
+header>nav>ul>li>ul {
   padding-left:        0;
 }
 
-header>ul>li>ul>li {
+header>nav>ul>li>ul>li {
   list-style:          none;
-  margin-top:          0px;
-  margin-bottom:       1rem;
+  margin-top:          none;
+  margin-bottom:       none;
   display:             none;
 }
 
-header>ul>li:hover>ul>li {
+header>nav>ul>li:hover>ul>li {
   display:             block;
 }
 
-header>ul>li>ul>li>a, header:hover>ul>li>a {
+header>nav>ul>li>ul>li>a, header>nav:hover>ul>li>a {
   line-height:         3rem;
   display:             block;
   text-decoration:     none;
-  margin-right:        0px;
-  margin-left:         0px;
+  margin-right:        none;
+  margin-left:         none;
   transition:          300ms;
 }
-header>ul>li>a {
-  line-height: 2rem;
+header>nav>ul>li>a {
+  line-height:         2rem;
   display:             block;
   text-decoration:     none;
-  margin-right:        0px;
-  margin-left:         0px;
+  margin-right:        none;
+  margin-left:         none;
   transition:          300ms;
+}
+
+table {
+  border-collapse:     collapse;
+  border-spacing:      none;
+}
+td, th {
+  border-style:        solid;
+  border-width:        2px;
 }
 
 button.lefter {
@@ -92,40 +106,55 @@ button.lefter:active, button.middler:active, button.righter:active, button.l-r:a
   color:               purple;
 }
 
+/*
+a b c d e f g h i j k l m n o p q r s t u v w x y z
+*/
 
+.warning {
+  border-color:        red;
+  border-radius:       0.375rem / 0.375rem;
+  border-style:        double;
+  border-width:        2px;
+  margin-bottom:       0.5rem;
+  padding:             0.75rem;
+}
+.warning::before {
+  content: url(./reference_mark-1.svg);
+}
 
 @media (prefers-color-scheme: light) {
   body {
     background-color:  yellow;
-    color:             lime;
+    color:             green;
   }
   
-  header {
+  header>nav {
     background-color:  orange;
   }
 
-  header>ul>li>ul {
+  header>nav>ul>li>ul {
     background-color:  darkorange;
   }
   
-  header a {
+  header>nav a {
     color:             white;
   }
-  header a:hover {
-    color:             lime;
+  header>nav a:hover {
     background-color:  white;
+    color:             lime;
+  }
+
+  th, td {
+    border-color:      blue;
   }
 
   .warning {
-    color:             red;
     background-color:  white;
-  }
-  .warning::before {
-    content: url(./reference_mark-1.svg);
+    color:             red;
   }
   .warning::selection {
-    color:             cyan;
     background-color:  black;
+    color:             cyan;
   }
 
   iframe {
@@ -145,7 +174,7 @@ white  -> dimgray
 @media (prefers-color-scheme: dark) {
   body {
     background-color:  black;
-    color:             darkgreen;
+    color:             lime;
   }
   
   body:disabled {
@@ -153,33 +182,34 @@ white  -> dimgray
     color:             black;
   }
   
-  header {
+  header>nav {
     background-color:  chocolate;
 
   }
 
-  header>ul>li>ul {
+  header>nav>ul>li>ul {
     background-color:  darkorange;
   }
   
-  header a {
+  header>nav a {
     color:             black;
   }
-  header a:hover {
-    color:             palegreen;
+  header>nav a:hover {
     background-color:  navy;
+    color:             palegreen;
+  }
+
+  th, td {
+    border-color:      white;
   }
 
   .warning {
-    color:             red;
     background-color:  dimgray;
-  }
-  .warning::before {
-    content: url(./reference_mark-1.svg);
+    color:             red;
   }
   .warning::selection{
-    color:             purple;
     background-color:  white;
+    color:             purple;
   }
   iframe {
     max-width: 100%;
