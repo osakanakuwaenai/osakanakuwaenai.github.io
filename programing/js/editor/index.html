@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="../../resources/index.css">
+
+  <link href="https://cdn.quilljs.com/1.3.6/quill.core.css" rel="stylesheet">
+  <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+  <link rel="icon" href="../../resources/icon.svg">
+
+  <title>投稿する - KIJITORAGAMES</title>
+  <noscript>
+    <link rel="stylesheet" href="osakanakuwaenai.github.io/osakanakuwaenai.github.io/resources/noscript.css">
+  </noscript>
+</head>
+<body>
+  <noscript>
+    <h1>お詫び</h1>
+    <p>このサイトは、JavaScriptが必須となっております。ご迷惑をおかけします。
+  </noscript>
+  <header></header>
+  <article id="yes-script-text">
+    <style>
+      #editor_all {
+        display: flex;
+      }
+
+      #editor_main {
+        width: 60%;
+        height: 100%;
+        border: solid 2px;
+        overflow: hidden;
+        text-align: left;
+        display: block;
+      }
+
+      #editor_main input#title {
+        font-size: 200%;
+        width: 100%;
+        padding: 0.25rem;
+        box-sizing: border-box;
+        border-style: solid;
+        border-width: 0px;
+        border-color: lime;
+      }
+
+      #download-settings {
+        width: 40%;
+        height: calc(25rem + 9px);
+        box-sizing: border-box;
+        padding: 1rem;
+        border: solid 2px;
+        display: block;
+        overflow: scroll;
+      }
+
+      #download-settings table {
+        text-align: center;
+      }
+
+      #download-settings table input {
+        height: 100%;
+        width: 4rem;
+        border: none;
+        margin: 0;
+        background-color: transparent;
+        color: lime;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        #download-settings table input {
+          color: darkgreen;
+        }
+      }
+
+      .table-title {
+        font-size: 150%;
+        width: calc(100% - 6px);
+        border-color: lime;
+        border-style: solid;
+        border-width: 3px;
+        margin-bottom: 0.5rem;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-top: 7px;
+        padding-bottom: 7px;
+      }
+
+      table {
+        border-collapse: collapse;
+        box-sizing: content-box;
+      }
+
+      th,
+      td {
+        height: 1.5rem;
+        border-style: solid;
+        border-width: 2px;
+        border-color: lime;
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      #quill-ed {
+        height: 20rem;
+        background-color: white;
+      }
+
+      #download-settings {
+        text-align: center;
+      }
+
+      .ql-snow.ql-toolbar,
+      .ql-snow.ql-container {
+        border: none;
+      }
+
+      /*
+    .ql-snow.ql-toolbar {
+      --svg-color: green;
+      color: var(--svg-color);
+    }
+    .ql-snow.ql-toolbar .ql-fill {
+      fill: var(--svg-color);
+    }
+    .ql-snow.ql-toolbar .ql-stroke {
+      stroke: var(--svg-color);
+    }*/
+    </style>
+    <h1>投稿用エディタ</h1>
+    <p>
+      使い方
+<<<<<<< HEAD:programing/js/editor.html
+    <ul>
+      <li>直&emsp;感&emsp;で&emsp;感&emsp;じ&emsp;ろ&emsp;。(圧倒的頭の頭痛感)</li>
+    </ul>
+    荒い作りですが、お許しください。
+=======
+      <ul><li>直&emsp;感&emsp;で&emsp;感&emsp;じ&emsp;ろ&emsp;。(圧倒的頭の頭痛感)</li></ul>
+      まあ直感ではどうにもならない所としては、投稿方法ですかね。
+      その方法は、<a href="./howtoup.html">こちらをご参照ください</a>。荒い作りですが、お許しください。
+>>>>>>> 19ba17f13be7d397b8c03124e8545ed5b45cba82:programing/js/editor/index.html
+    </p>
+    <div id="editor_all">
+      <div id="editor_main">
+        <input id="title" type="text" placeholder="タイトルを入力…"><br>
+        <div id="editor-toolbar">
+          <span class="ql-formats">
+
+          </span>
+          <span class="ql-formats"></span>
+          <span class="ql-formats"></span>
+          <span class="ql-formats"></span>
+          <span class="ql-formats"></span>
+          <span class="ql-formats"></span>
+          <span class="ql-formats"></span>
+          <span class="ql-formats"></span>
+          <span class="ql-formats"></span>
+          <span class="ql-formats"></span>
+          <span class="ql-formats"></span>
+        </div>
+        <div id="quill-ed">
+          <p>どうもみなさんこんにちは！&lt;user-name&gt;です！</p>
+        </div>
+      </div>
+      <div id="download-settings">
+        <h2>ダウンロードページの編集</h2>
+        <div id="tables">
+        </div>
+        <button onclick="tableAdder()" class="l-r">＋</button>
+      </div>
+    </div>
+    <br>
+    <div class="center">
+      <a class="center" id="btn">
+        <button class="l-r" onclick="createHTMLFile()" view="htmlを出力します。これをgithubに提出してください。">
+          HTML を出力
+        </button>
+      </a>
+    </div>
+
+    <!-- The script is for create table. -->
+    <script>
+      let tbs = document.getElementById("tables"); //TaBleS
+      let value_num = 0;
+      let strtb =
+        `<div class="${value_num}">
+      <input type="text" class="table-title \$\{value_num\}" placeholder="バージョン名を入力..."><br>
+      <table class="table ${value_num}">
+        <tr>
+          <th></th><th><input type="text"></th>
+        </tr>
+        <tr>
+          <th><input type="text"></th><td><input type="url"></td>
+        </tr>
+        <tr>
+          <th><input type="text"></th><td><input type="url"></td>
+        </tr>
+      </table>
+
+      <ul style="list-style:none;text-align:left;"><li>
+      <label>
+        <input type="radio" name="radio-${value_num}">
+        <input type="number" min="1" class="num-${value_num}">
+        <select class="col-or-row ${value_num}">
+          <option value="">--選択--</option>
+          <option value="col">列</option>
+          <option value="row">行</option>
+        </select>目<br>
+      </label></li>
+
+      <li>
+      <label>
+        <input type="radio" name="radio-${value_num}">
+        最後の
+        <select class="col-or-row ${value_num}">
+          <option value="">--選択--</option>
+          <option value="col">列</option>
+          <option value="row">行</option>
+        </select>を
+      </label></li>
+      </ul>
+  
+<button class="lefter btn ${value_num}" onclick="rowcolAdder(${value_num})" title="特定の列・行を追加します。">追加する</button>\
+<button class="middler btn ${value_num}" onclick="rowcolDeleter(${value_num})" title="特定の列・行を削除します。">削除する</button>\
+<button class="righter btn ${value_num}" onclick="tableDeleter(${value_num})" title="注：リストを削除します。">&nbsp;ー&nbsp;</button><br><br>
+    </div>`;
+
+      function tableAdder() {
+        tbs.insertAdjacentHTML("beforeend", strtb);
+        value_num++;
+        strtb =
+          `<div class="${value_num}">
+        <input type="text" class="table-title \$\{value_num\}" placeholder="バージョン名を入力..."><br>
+        <table class="table ${value_num}">
+          <tr>
+            <th></th><th><input type="text"></th>
+          </tr>
+          <tr>
+            <th><input type="text"></th><td><input type="url"></td>
+          </tr>
+          <tr>
+            <th><input type="text"></th><td><input type="url"></td>
+          </tr>
+        </table>
+
+        <label>
+          <input type="radio" name="radio-${value_num}">
+          <input type="number" min="1" class="num-${value_num}">
+          <select class="col-or-row ${value_num}">
+            <option value="">--選択--</option>
+            <option value="col">列</option>
+            <option value="row">行</option>
+          </select>目<br>
+        </label>
+
+        <label>
+          <input type="radio" name="radio-${value_num}">
+          最後の
+          <select class="col-or-row ${value_num}">
+            <option value="">--選択--</option>
+            <option value="col">列</option>
+            <option value="row">行</option>
+          </select>を
+        </label>
+
+        <br>
+<button class="lefter btn ${value_num}" onclick="rowcolAdder(${value_num})" title="特定の列・行を追加します。">追加する</button>\
+<button class="middler btn ${value_num}" onclick="rowcolDeleter(${value_num})" title="特定の列・行を削除します。">削除する</button>\
+<button class="righter btn ${value_num}" onclick="tableDeleter(${value_num})" title="注：リストを削除します。">&nbsp;ー&nbsp;</button><br><br>
+    </div>`;
+      };
+
+      function tableDeleter(num) {
+        let isGetConfirm = true;
+        let deleteDiv = document.getElementsByClassName(num).item(0);
+        if (document.getElementsByClassName(num).item(1).value !== "") { isGetConfirm = false; }
+        else {
+          let dTable = document.getElementsByClassName(num).item(2);
+
+          labelOf: {
+            for (let dRow of dTable.rows) {
+              for (let dCell of dRow.cells) {
+                let dItem = dCell.children.item(0);
+                if (dItem.value !== null) { isGetConfirm = false; }
+              }
+              if (isGetConfirm === true) { break labelOf; }
+            }
+          }
+        }
+        if (isGetConfirm || confirm("表を削除します。\n本当にいいのですか？")) {
+          deleteDiv.remove();
+        }
+      }
+
+      function rowcolAdder(num) {
+        let lines;
+        let isrow;
+        const table = document.getElementsByClassName("table " + num).item(0);
+        const radio = document.getElementsByName("radio-" + num);
+
+        if (radio.item(0).checked) {
+          lines = Number(document.getElementsByClassName("num-" + num).item(0).value);
+          isrow = document.getElementsByClassName("col-or-row " + num).item(0).value == "row";
+        } else if (radio.item(1).checked) {
+          lines = -1;
+          isrow = document.getElementsByClassName("col-or-row " + num).item(1).value == "row";
+        } else if (confirm("numの値を使って実行しますか？")) {
+          lines = Number(document.getElementsByClassName("num-" + num).item(0).value);
+          isrow = document.getElementsByClassName("col-or-row " + num).item(0).value == "row";
+        } else { return; };
+        if (isrow) {
+          let insertedRow = table.insertRow(lines); //Since it is not possible to generate th with insertcell,
+          let th = document.createElement("th"); //Create th,
+          th.innerHTML = "<input type=\"text\">"; //Set innerHtml,
+          insertedRow.appendChild(th); //And, use appendchild
+
+          let j = table.outerHTML.match(/<td>/g).length / (table.outerHTML.match(/<tr>/g).length - 1/*except td which only has th*/ - 1/*Except for the td (insertedRow) created earlier*/);
+          for (let i = 0; i < j; i++) {
+            let td = insertedRow.insertCell(-1);
+            td.innerHTML = "<input type=\"url\">";
+          }
+
+        } else if (!isrow) {
+          let th = document.createElement("th");
+          th.innerHTML = "<input type=\"text\">";
+          table.rows[0].appendChild(th);
+
+          let len = table.rows.length;
+          for (let i = 1; i < len; i++) { //The reason for setting "i = 1;" is to prevent td from entering where th is added.
+            let td = table.rows[i].insertCell(lines);
+            td.innerHTML = "<input type=\"url\">";
+          }
+        };
+      };
+
+      function rowcolDeleter(num) {
+        let lines;
+        let isrow;
+        const table = document.getElementsByClassName("table " + num);
+        const radio = document.getElementsByName("radio-" + num);
+        if (radio.item(0).checked) {
+          lines = Number(document.getElementsByClassName("num-" + num).item(0).value);
+          isrow = document.getElementsByClassName("col-or-row " + num).item(0).value == "row";
+        } else if (radio.item(1).checked) {
+          lines = -1;
+          isrow = document.getElementsByClassName("col-or-row " + num).item(1).value == "row";
+        } else if (confirm("numの値を使って実行しますか？")) {
+          lines = Number(document.getElementsByClassName("num-" + num).item(0).value);
+          isrow = document.getElementsByClassName("col-or-row " + num).item(0).value == "row";
+        } else { return; };
+        if (isrow) {
+          table.deleteRow(num);
+        } else {
+          for (let i; i < table.rows.length; i++) {
+            table.rows[i].deleteCell(num);
+          }
+        }
+      }
+    </script>
+
+    <script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
+    <script>
+      var Delta = Quill.import('delta');
+      let Break = Quill.import('blots/break');
+      let Embed = Quill.import('blots/embed');
+
+      function lineBreakMatcher() {
+        var newDelta = new Delta();
+        newDelta.insert({ 'break': '' });
+        return newDelta;
+      }
+
+      class SmartBreak extends Break {
+        length() {
+          return 1
+        }
+        value() {
+          return '\n'
+        }
+
+        insertInto(parent, ref) {
+          Embed.prototype.insertInto.call(this, parent, ref)
+        }
+      }
+
+      SmartBreak.blotName = 'break';
+      SmartBreak.tagName = 'BR'
+
+      Quill.register(SmartBreak)
+
+      const KJTRCLRS = [
+        '#988500', 'chocolate', 'maroon', 'purple', 'navy', 'darkslategray', 'darkgreen',
+        '#BA0', '#DE8500', 'crimson', 'mediumorchid', 'mediumblue', 'cadetblue', 'green',
+        '#DC0', 'orange', 'red', 'magenta', 'blue', 'cyan', 'lime',
+        'khaki', 'navajowhite', 'pink', 'plum', 'lightskyblue', 'paleturquoise', 'lightgreen',
+        'black', 'dimgray', 'gray', 'silver', 'lightgray', 'gainsboro', 'white'
+      ];
+
+      const KJTRTOOLBAR = [
+        [{ header: 2 }, { header: 3 }, { header: false }],
+        ['bold', 'italic', 'underline', 'strike'],
+        [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+        [{ 'color': KJTRCLRS }, { 'background': KJTRCLRS }],
+        ['link', 'image', 'video'],
+        [{ 'script': 'sub' }, { 'script': 'super' }],
+        [{ 'size': 'large' }, { 'size': false }, { 'size': 'small' }]
+        ['formula', 'code-block'],
+        [], ['clean'],
+      ];
+
+      var quill = new Quill('#quill-ed', {
+        theme: 'snow',
+        modules: {
+          toolbar: {
+            container: KJTRTOOLBAR,
+            //container: '#editor-toolbar',
+          },
+          clipboard: {
+            matchers: [
+              ['BR', lineBreakMatcher]
+            ]
+          },
+          keyboard: {
+            bindings: {
+              linebreak: {
+                key: 13,
+                shiftKey: true,
+                handler: function (range) {
+                  let currentLeaf = this.quill.getLeaf(range.index)[0]
+                  let nextLeaf = this.quill.getLeaf(range.index + 1)[0]
+
+                  this.quill.insertEmbed(range.index, 'break', true, 'user');
+
+                  // Insert a second break if:
+                  // At the end of the editor, OR next leaf has a different parent (<p>)
+                  if (nextLeaf === null || (currentLeaf.parent !== nextLeaf.parent)) {
+                    this.quill.insertEmbed(range.index, 'break', true, 'user');
+                  }
+
+                  // Now that we've inserted a line break, move the cursor forward
+                  this.quill.setSelection(range.index + 1, Quill.sources.SILENT);
+                }
+              }
+            }
+          }
+        },
+      });
+
+      
+
+      quill.keyboard.addBinding({
+        key: "B",
+        shortKey: true,
+      }, function (range, context) {
+        this.quill.formatText(range, "bold", true);
+      });
+      quill.keyboard.addBinding({
+        key: "I",
+        shortKey: true,
+      }, function (range, context) {
+        this.quill.formatText(range, "italic", true);
+      });
+      quill.keyboard.addBinding({
+        key: "U",
+        shortKey: true,
+      }, function (range, context) {
+        this.quill.formatText(range, "underline", true);
+      });
+      quill.keyboard.addBinding({
+        key: "S",
+        shortKey: true,
+        altKey: true
+      }, function (range, context) {
+        this.quill.formatText(range, "strike", true);
+      });
+      quill.keyboard.addBinding({
+        key: ""
+      })
+
+      
+      var length = quill.getLength()
+      var text = quill.getText(length - 2, 2)
+
+      // Remove extraneous new lines
+      if (text === '\n\n') {
+        quill.deleteText(quill.getLength() - 2, 2)
+      }
+
+      function createHTMLFile() {
+        let text = document.getElementsByClassName("ql-editor").item(0).innerHTML;
+        let btn = document.getElementById("btn");
+        let blob_test = new Blob([text], { type: "text/html" });
+        dlid = document.getElementById("title");
+        dlname = dlid.value
+        if (dlname === "") {
+          dlname = prompt("タイトルは何にしますか？");
+          dlid.textContent = dlname;
+
+        }
+        btn.download = dlname;
+        btn.href = window.URL.createObjectURL(blob_test);
+      }
+    </script>
+    <script src="../../index.js"></script>
+  </article>
+</body>
