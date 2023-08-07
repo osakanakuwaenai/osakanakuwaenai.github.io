@@ -1,0 +1,11 @@
+header nav>ul {
+  background: var(--header-bg);
+  box-sizing: content-box;
+  position: fixed;
+}
+
+
+
+#\^hamburger-io {
+  display: none;
+}

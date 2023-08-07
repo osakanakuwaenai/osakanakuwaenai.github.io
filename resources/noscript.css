@@ -1,0 +1,21 @@
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: aliceblue;
+    color: black;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: black;
+    color: aliceblue;
+  }
+}
+
+body {
+  text-align: left;
+}
+
+nav, .yes-script-text {
+  display: none;
+}
