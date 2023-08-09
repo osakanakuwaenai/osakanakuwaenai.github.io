@@ -65,6 +65,11 @@ body {
   transition: 300ms;
   vertical-align: middle;
 }
+@media (any-hover: none) {
+  body {
+    background: --bg;
+  }
+}
 
 #yes-script-text {
   background: var(--bg);
