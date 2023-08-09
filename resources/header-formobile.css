@@ -101,7 +101,7 @@ header nav>ul {
     translateX(min(-1.5vh, -1.5vh)) rotateZ(-90deg) rotateZ(-135deg);
 }
 
-@media (prefer-color-scheme: light) {
+@media (prefers-color-scheme: light) {
   #\^humberger {
     border-radius: 50%;
     transition: border-radius calc(var(--header-transition) / 2);
