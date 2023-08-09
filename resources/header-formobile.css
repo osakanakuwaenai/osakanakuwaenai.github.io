@@ -100,3 +100,13 @@ header nav>ul {
   transform:
     translateX(min(-1.5vh, -1.5vh)) rotateZ(-90deg) rotateZ(-135deg);
 }
+
+@media (prefer-color-scheme: light) {
+  #\^humberger {
+    border-radius: 50%;
+    transition: border-radius calc(var(--header-transition) / 2);
+  }
+  #\^hamburger-io:checked~#\^hamburger {
+    border-radius: 0;
+  }
+}
