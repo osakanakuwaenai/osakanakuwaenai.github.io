@@ -36,7 +36,7 @@ header nav>ul {
   display: flex;
   height: max(8vh, 8vw, 50px);
   justify-content: center;
-  position: fixed;
+  position: sticky;
   right: max(2vh, 2vw);
   top: max(2vh, 2vw);
   width: max(8vh, 8vw, 50px);
