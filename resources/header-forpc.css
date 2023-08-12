@@ -20,6 +20,7 @@ header nav>ul {
   left: 0rem;
   margin-top: 0;
   padding-top: 0rem;
+  position: sticky;
   text-align: center;
   top: 0rem;
   transition:
