@@ -1,9 +1,3 @@
-#yes-script-text {
-  height: 100vh;
-}
-
-
-
 header nav>ul {
   background: var(--header-bg);
   box-sizing: content-box;
