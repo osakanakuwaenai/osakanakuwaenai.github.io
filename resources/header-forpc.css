@@ -15,11 +15,11 @@
 header nav>ul {
   border: var(--header-border-color) var(--header-border-width) var(--header-border-style);
   box-sizing: content-box;
-  display: sticky;
   height: 2rem;
   left: 0rem;
   margin-top: 0;
   padding-top: 0rem;
+  position: sticky;
   text-align: center;
   top: 0rem;
   transition:
