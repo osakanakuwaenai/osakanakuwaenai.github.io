@@ -75,9 +75,9 @@ body {
 
 #yes-script-text {
   background: var(--bg);
+  border-bottom: 3rem solid var(--yst-bg);
   border-left: 5vw solid var(--yst-bg);
   border-right: 5vw solid var(--yst-bg);
-  padding-bottom: 3rem;
   padding-left: 15vw;
   padding-right: 15vw;
   width: 60vw;
@@ -95,11 +95,6 @@ header nav>ul>li>ul {
   border: var(--header-border-color) var(--header-border-width) var(--header-border-style);
 }
 
-@media all and (--is-hamburger: 1) {
-  .yes-script-text {
-    background-color: cyan;
-  }
-}
 
 table {
   border-collapse: collapse;
