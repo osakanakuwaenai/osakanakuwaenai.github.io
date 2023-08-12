@@ -27,6 +27,7 @@
     --warn-color: red;
     --warn-selected-color: cyan;
     --warn-selected-bg: black;
+    --yst-bg: white;
   }
 }
 @media (prefers-color-scheme: dark) {
@@ -34,7 +35,7 @@
     --alert-bg: #444;
     --alert-color-i: #ffa;
     --alert-color-ii: black;
-    --bg: #222;
+    --bg: #000;
     --font-color: #4c0;
     --header-bg: #333;
     --header-color: #eee;
@@ -50,6 +51,7 @@
     --warn-color: #c33;
     --warn-selected-color: #3cc;
     --warn-selected-bg: #cfcfcf;
+    --yst-bg: #222;
   }
 }
 
@@ -67,15 +69,17 @@ body {
 }
 @media (any-hover: none) {
   body {
-    background: --bg;
+    background: var(--bg);
   }
 }
 
 #yes-script-text {
   background: var(--bg);
+  border-left: 5vw solid var(--yst-bg);
+  border-right: 5vw solid var(--yst-bg);
   padding-bottom: 3rem;
-  padding-left: 20vw;
-  padding-right: 20vw;
+  padding-left: 15vw;
+  padding-right: 15vw;
   width: 60vw;
 }
 
@@ -210,7 +214,7 @@ p::before {
 }
 
 .alert::before {
-  content: url(./ガイコツの無料アイコン.svg);
+  content: url(./ガイコツの無料アイコン.svg);
 }
 
 /*
