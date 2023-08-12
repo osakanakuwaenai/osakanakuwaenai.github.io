@@ -75,6 +75,7 @@ body {
 
 #yes-script-text {
   background: var(--yst-bg);
+  border-radius: 10vmin;
   margin-left: 15vw;
   margin-right: 15vw;
   padding-left: 5vw;
