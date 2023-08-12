@@ -74,13 +74,21 @@ body {
 }
 
 #yes-script-text {
-  background: var(--bg);
-  border-bottom: 3rem solid var(--yst-bg);
-  border-left: 5vw solid var(--yst-bg);
-  border-right: 5vw solid var(--yst-bg);
-  padding-left: 15vw;
-  padding-right: 15vw;
+  background: var(--yst-bg);
+  margin-left: 15vw;
+  margin-right: 15vw;
+  padding-left: 5vw;
+  padding-right: 5vw;
   width: 60vw;
+  z-index: 1;
+}
+#yes-script-text::before {
+  background: var(--bg);
+  position: absolute;
+  top: 0vh;
+  left: 0vw;
+  height: 100vh;
+  width: 100vw;
 }
 
 h1, h2, h3, h4, h5, h6, .center {
