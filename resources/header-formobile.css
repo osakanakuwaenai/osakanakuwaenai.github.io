@@ -13,6 +13,7 @@
 }
 
 header nav>ul {
+  display: none;
   height: 100%;
   left: 100%;
   position: absolute;
@@ -24,6 +25,7 @@ header nav>ul {
 }
 
 #\^hamburger-io:checked~#\^hamburger~ul {
+  display: block;
   left: 0;
 }
 
