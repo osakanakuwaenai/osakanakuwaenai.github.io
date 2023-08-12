@@ -19,7 +19,8 @@ header nav>ul {
   position: absolute;
   top: min(-2vh, -2vw);
   transition:
-    left var(--header-transition);
+    left var(--header-transition),
+    display 0s;
   width: 100%;
   z-index: 222280;
 }
