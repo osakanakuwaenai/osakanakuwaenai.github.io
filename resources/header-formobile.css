@@ -15,7 +15,7 @@
 header nav>ul {
   height: 100%;
   left: 100%;
-  position: flex;
+  position: absolute;
   top: min(-2vh, -2vw);
   transition:
     left var(--header-transition);
