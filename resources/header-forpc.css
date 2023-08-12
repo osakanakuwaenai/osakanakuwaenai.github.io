@@ -15,6 +15,7 @@
 header nav>ul {
   border: var(--header-border-color) var(--header-border-width) var(--header-border-style);
   box-sizing: content-box;
+  display: sticky;
   height: 2rem;
   left: 0rem;
   margin-top: 0;
