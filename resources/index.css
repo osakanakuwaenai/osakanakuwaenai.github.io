@@ -86,12 +86,6 @@ header nav>ul>li>ul {
   border: var(--header-border-color) var(--header-border-width) var(--header-border-style);
 }
 
-@media all and (--is-hamburger: 1) {
-  .yes-script-text {
-    background-color: cyan;
-  }
-}
-
 table {
   border-collapse: collapse;
   border-spacing: 0;
