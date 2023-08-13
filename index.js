@@ -78,8 +78,8 @@ hdr.innerHTML = `
       </li>
       <li><a href="//osakanakuwaenai.github.io/music">&emsp;&emsp;&emsp;作曲&emsp;&emsp;&emsp;</a>
         <ul>
-          <li><a href="//osakanakuwaenai.github.io/music/undertale">UNDERTALE</a></li>
-          <li><a href="//osakanakuwaenai.github.io/music/original">オリジナルBGM</a></li>
+        <li><a href="//osakanakuwaenai.github.io/music/original">オリジナル曲・BGM</a></li>
+          <li><a href="//osakanakuwaenai.github.io/music/second">二次創作</a></li>
           <li><a href="//osakanakuwaenai.github.io/music/others">その他</a></li>
         </ul>
       </li>
