@@ -13,16 +13,20 @@
 }
 
 header nav>ul {
+  display: none;
   height: 100%;
   left: 100%;
+  position: absolute;
   top: min(-2vh, -2vw);
   transition:
-    left var(--header-transition);
+    left var(--header-transition),
+    display 0s;
   width: 100%;
   z-index: 222280;
 }
 
 #\^hamburger-io:checked~#\^hamburger~ul {
+  display: block;
   left: 0;
 }
 
@@ -99,4 +103,14 @@ header nav>ul {
   top: 0;
   transform:
     translateX(min(-1.5vh, -1.5vh)) rotateZ(-90deg) rotateZ(-135deg);
+}
+
+@media (prefers-color-scheme: light) {
+  #\^humberger {
+    border-radius: 50%;
+    transition: border-radius calc(var(--header-transition) / 2);
+  }
+  #\^hamburger-io:checked~#\^hamburger {
+    border-radius: 0;
+  }
 }
