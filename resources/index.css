@@ -74,8 +74,10 @@ body {
   background: var(--yst-bg);
   border-radius: var(--yst-border-width);
   width: 60vw;
+  margin-top: 0;
   margin-left: 15vw;
   margin-right: 15vw;
+  padding-top: 2rem;
   padding-left: 5vw;
   padding-right: 5vw;
 }

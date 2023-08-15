@@ -1,9 +1,12 @@
+header {
+  position: relative;
+  z-index: 222200;
+}
+
 header nav>ul {
   background: var(--header-bg);
   box-sizing: content-box;
 }
-
-
 
 #\^hamburger-io {
   display: none;
