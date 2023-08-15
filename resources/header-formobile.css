@@ -6,6 +6,10 @@
   --is-hamburger: 1;
 }
 
+body {
+  background: var(--bg);
+}
+
 #yes-script-text {
   margin-top: 0rem;
   padding-top: 2rem;

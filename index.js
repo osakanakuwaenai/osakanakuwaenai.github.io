@@ -61,7 +61,7 @@ hdr.innerHTML = `
     <input type="checkbox" id="^hamburger-io">
     <label for="^hamburger-io" id="^hamburger"><span></span></label>
     <ul>
-      <li><a href="//osakanakuwaenai.github.io">&emsp;HOME&emsp;</a></li>
+      <li><a href="//osakanakuwaenai.github.io" home>&emsp;HOME&emsp;</a></li>
       <li><a href="//osakanakuwaenai.github.io/programing">&emsp;プログラミング&emsp;</a>
         <ul>
           <li><a href="//osakanakuwaenai.github.io/programing/js">Java Script</a></li>

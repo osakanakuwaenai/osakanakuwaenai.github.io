@@ -6,9 +6,13 @@
   --is-hamburger: 0;
 }
 
+body {
+  background: var(--header-bg);
+}
+
 #yes-script-text {
   margin-top: 0;
-  padding-top: 3em;
+  padding-top: 2rem;
   top: 0;
 }
 
@@ -20,7 +24,7 @@ header nav>ul {
   left: 0rem;
   margin-top: 0;
   padding-top: 0rem;
-  position: sticky;
+  position: fixed;
   text-align: center;
   top: 0rem;
   transition:
