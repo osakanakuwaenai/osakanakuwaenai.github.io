@@ -164,13 +164,12 @@ button.lefter:active, button.middler:active, button.righter:active, button.l-r:a
 
 .warn::before {
   background-color: var(--warn-bg);
-  content: "※";
+  content: "";
   display: inline-block;
   height: 1em;
-  mask: url("./reference_mark-1.svg");
+  mask: url("./reference_mark-1.svg") no-repeat 50% 50%;
   mask-size: cover;
   width: 1em;
-  /*background-color:       var(--warn-bg);*/
   /*mask:                   url("./reference_mark-1.svg") no-repeat 50% 50%;*/
 }
 
