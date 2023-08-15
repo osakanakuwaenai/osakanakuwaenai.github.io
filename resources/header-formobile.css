@@ -11,8 +11,6 @@ body {
 }
 
 #yes-script-text {
-  margin-top: 0rem;
-  padding-top: 2rem;
   transform: translateY(min(-2.5vh, -2.5vw));
 }
 
@@ -24,14 +22,15 @@ header nav>ul {
   top: min(-2vh, -2vw);
   transition:
     left var(--header-transition),
-    display 0s;
-  width: 100%;
+    width var(--header-transition);
+  width: 0;
   z-index: 222280;
 }
 
 #\^hamburger-io:checked~#\^hamburger~ul {
   display: block;
   left: 0;
+  width: 100%
 }
 
 #\^hamburger {
