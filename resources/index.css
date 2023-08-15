@@ -235,16 +235,16 @@ p::before {
 
 @media (prefers-color-scheme: light) {
   .sober {
-    color: #fc0;
+    color: rgba(255, 128, 0, .1);
   }
 }
 
 @media (prefers-color-scheme: dark) {
   .sober {
-    color: #1c1c1c;
+    color: rgba(255, 255, 255, .1);
   }
 }
 
 .sober::selection {
-  background-color: var(--bg);
+  background-color: var(--yst-bg);
 }
