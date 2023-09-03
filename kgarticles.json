@@ -1,0 +1,9 @@
+{
+  "template": "temp.html",
+  "indexes": {
+    "minecraft": {},
+    "musics": {},
+    "pictures": {},
+    "programming": {}
+  }
+}
