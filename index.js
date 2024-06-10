@@ -56,7 +56,7 @@ if (isOpera()) {
 <div class="sober center">もはや洗脳でしょこれ...</div><br><br><br><br><br><br><br>`;
 };/**/
 let head = document.querySelector("head");
-head.innerHTML = "<base href='https//kjtrgames.github.io/index.html'>" + head.innerHTML;
+document.querySelector("head").innerHTML = "<base href='https//kjtrgames.github.io/index.html'>" + head.innerHTML;
 let hdr = document.querySelector("header");
 hdr.innerHTML = `
   <nav>
