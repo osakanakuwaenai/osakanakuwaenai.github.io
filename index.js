@@ -55,13 +55,15 @@ if (isOpera()) {
 &emsp;<a href="https://www.microsoft.com/ja-jp/edge/">https://www.microsoft.com/ja-jp/edge/</a></div>
 <div class="sober center">もはや洗脳でしょこれ...</div><br><br><br><br><br><br><br>`;
 };/**/
+let head = document.querySelector("head");
+head.innerHTML = "<base href='https//kjtrgames.github.io/index.html'>" + head.innerHTML;
 let hdr = document.querySelector("header");
 hdr.innerHTML = `
   <nav>
     <input type="checkbox" id="^hamburger-io">
     <label for="^hamburger-io" id="^hamburger"><span></span></label>
     <ul>
-      <li><a href="//osakanakuwaenai.github.io" home>&emsp;HOME&emsp;</a></li>
+      <li><a href="." home>&emsp;HOME&emsp;</a></li>
       <li><a href="//osakanakuwaenai.github.io/programing">&emsp;プログラミング&emsp;</a>
         <ul>
           <li><a href="//osakanakuwaenai.github.io/programing/js">Java Script</a></li>
