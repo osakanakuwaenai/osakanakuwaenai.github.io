@@ -55,8 +55,6 @@ if (isOpera()) {
 &emsp;<a href="https://www.microsoft.com/ja-jp/edge/">https://www.microsoft.com/ja-jp/edge/</a></div>
 <div class="sober center">もはや洗脳でしょこれ...</div><br><br><br><br><br><br><br>`;
 };/**/
-let head = document.querySelector("head");
-document.querySelector("head").innerHTML = "<base href='https//kjtrgames.github.io/index.html'>" + head.innerHTML;
 let hdr = document.querySelector("header");
 hdr.innerHTML = `
   <nav>
