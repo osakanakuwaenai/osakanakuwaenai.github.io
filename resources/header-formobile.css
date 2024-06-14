@@ -1,16 +1,10 @@
 /* It's hamburger menu */
 
-@import url("header-common.css");
-
 :root {
   --is-hamburger: 1;
 }
 
-body {
-  background: var(--bg);
-}
-
-#yes-script-text {
+article {
   transform: translateY(min(-2.5vh, -2.5vw));
 }
 

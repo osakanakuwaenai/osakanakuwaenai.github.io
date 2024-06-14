@@ -1,0 +1,23 @@
+@import url("./header-forpc.css")     (min-width: 781px) and (any-hover: hover);
+@import url("./header-formobile.css") (max-width: 780px)  ,  (any-hover: none);
+
+
+body {
+  background: var(--bg);
+}
+
+header {
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 222200;
+}
+
+header nav>ul {
+  background: var(--header-bg);
+  box-sizing: content-box;
+}
+
+#\^hamburger-io {
+  display: none;
+}

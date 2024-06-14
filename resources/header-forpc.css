@@ -1,24 +1,16 @@
 /* It's standard menu*/
 
-@import url("header-common.css");
-
 :root {
   --is-hamburger: 0;
 }
 
-body {
-  background: var(--header-bg);
-}
-
-#yes-script-text {
-  top: 0;
-}
 
 header nav>ul {
   border: var(--header-border-color) var(--header-border-width) var(--header-border-style);
   box-sizing: content-box;
   display: flex;
-  height: 2rem;
+  font-size: 1.05rem;
+  height: 3rem;
   left: 0rem;
   margin-top: 0;
   padding-top: 0rem;
@@ -30,7 +22,7 @@ header nav>ul {
   width: calc(100% - var(--header-border-width) * 2);
 }
 header nav>ul:hover {
-  height: 3rem;
+  height: 5rem;
   transform: translate(0, -2px);
 }
 
@@ -38,16 +30,20 @@ header nav>ul>li {
   list-style: none;
 }
 header nav:hover>ul>li>a {
-  line-height: 3rem;
+  line-height: 5rem;
 }
 header nav>ul>li:active>a {
   color: var(--header-color);
   background: var(--font-color);
 }
 
+header nav>ul:first-child a::before {
+  content:"a";
+}
+
 header nav>ul>li>a {
   border-radius: var(--header-content-radius);
-  line-height: 2rem;
+  line-height: 3rem;
 }
 
 header nav>ul>li>ul {
