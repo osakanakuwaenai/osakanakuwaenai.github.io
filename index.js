@@ -20,7 +20,7 @@ function isOpera() {
 }
 
 if (isIe()) {
-  let yst = document.getElementById("yes-script-text");
+  let yst = document.querySelector("article");
   yst.innerHTML = `
 <div class="alert">厳重警告:<br>
 &emsp;あなたは<u>InternetExplorer</u>(以下IE)を使っています。<br>
@@ -40,7 +40,7 @@ if (isIe()) {
 <div class="sober center">もはや洗脳でしょこれ...</div>`;
 };/**/
 if (isOpera()) {
-  let yst = document.getElementById("yes-script-text");
+  let yst = document.querySelector("article");
   yst.innerHTML = ` 
 <div class="warn">警告:<br>
 &emsp;あなたは<u>Opera</u>を使っています。<br>
@@ -53,7 +53,7 @@ if (isOpera()) {
 &emsp;<a href="https://www.google.com/intl/ja_jp/chrome/">https://www.google.com/intl/ja_jp/chrome/</a><br><br>
 &emsp;まさかとは思いますが、<b><span style="font-size:large"><u>一応</u></b></span>Edgeも。<br>
 &emsp;<a href="https://www.microsoft.com/ja-jp/edge/">https://www.microsoft.com/ja-jp/edge/</a></div>
-<div class="sober center">もはや洗脳でしょこれ...</div><br><br><br><br><br><br><br>`;
+<div class="sober center">もはや洗脳でしょこれ...</div>`;
 };/**/
 let hdr = document.querySelector("header");
 hdr.innerHTML = `
@@ -76,14 +76,14 @@ hdr.innerHTML = `
           <li><a href="//osakanakuwaenai.github.io/minecraft/others">その他のMOD</a></li>
         </ul>
       </li>
-      <li><a href="//osakanakuwaenai.github.io/music">&emsp;&emsp;&emsp;作曲&emsp;&emsp;&emsp;</a>
+      <li><a href="//osakanakuwaenai.github.io/music">&emsp;&emsp;作曲&emsp;&emsp;</a>
         <ul>
-        <li><a href="//osakanakuwaenai.github.io/music/original">オリジナル曲・BGM</a></li>
+        <li><a href="//osakanakuwaenai.github.io/music/original">オリジナル</a></li>
           <li><a href="//osakanakuwaenai.github.io/music/second">二次創作</a></li>
           <li><a href="//osakanakuwaenai.github.io/music/others">その他</a></li>
         </ul>
       </li>
-      <li><a href="//osakanakuwaenai.github.io/pictures">&emsp;&emsp;&emsp;&emsp;絵&emsp;&emsp;&emsp;</a>
+      <li><a href="//osakanakuwaenai.github.io/pictures">&emsp;&emsp;&emsp;絵&emsp;&emsp;&emsp;</a>
         <ul>
           <li><a href="//osakanakuwaenai.github.io/pictures/dots">ドット絵</a></li>
           <li><a href="//osakanakuwaenai.github.io/pictures/others">その他の絵</a></li>
