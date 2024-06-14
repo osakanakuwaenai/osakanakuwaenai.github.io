@@ -6,15 +6,20 @@
   <noscript><link rel="stylesheet" href="./resources/noscript.css"></noscript>
 </head>
 <body>
-<noscript>
-  <h1>お詫び</h1>
-  <p>このサイトは、JavaScriptが必須となっております。ご迷惑をおかけします。
-</noscript>
-<script src="/index.js"></script>
-<article>
-  <form action="/" method="get">
-    <input type="search" name="search" placeholder="キーワードを入力">
-    <input type="button" value="submit" name="検索" onclick="searchFiles()">
-  </form>
-</article>
+  <noscript>
+    <h1>お詫び</h1>
+    <p>このサイトは、JavaScriptが必須となっております。ご迷惑をおかけします。
+  </noscript>
+  <header></header>
+  <style>article{margin-top: 10vh;padding-top:10rem;padding-bottom:10rem; }form{text-align:center; }form input[type=search]{border-color:var(--font-color);border-style:solid;border-width:1px;border-radius: 1em 0 0 1em;height:2em;font-size: 1em;width: 30vw;}input[type=submit]{background:white;border-color:var(--font-color);border-style:solid;border-width:1px;border-radius: 0 1em 1em 0;height:2em;font-size: 1em;}</style>
+  <article>
+    <div id="^main-title">
+      <h1>検索</h1>
+    </div>
+    <br>
+    <form action="search.html" method="get">
+      <input type="search" name="search" placeholder="キーワードを入力"><input type="submit" value="調" onclick="searchFiles()">
+    </form>
+  </article>
+  <script src="./index.js"></script>
 </body>

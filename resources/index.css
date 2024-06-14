@@ -74,9 +74,11 @@ article {
   border-radius: var(--yst-border-width);
   width: 60vw;
   margin-top: 0;
+  margin-bottom: 1rem;
   margin-left: 15vw;
   margin-right: 15vw;
   padding-top: 2rem;
+  padding-bottom: 2rem;
   padding-left: 5vw;
   padding-right: 5vw;
 }
@@ -157,11 +159,6 @@ button.lefter:active, button.middler:active, button.righter:active, button.l-r:a
   /*mask: url("./reference_mark-1.svg") no-repeat 50% 50%;*/
   mask-size: cover;
   width: 1em;
-}
-
-
-p::before {
-  content: "　";
 }
 
 
